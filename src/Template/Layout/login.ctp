@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$pageDescription = 'Business Intelligence : Falilu Corporation';
+$pageDescription = 'Business Intelligence : KPI CENTER Corporation';
 ?>
 <!DOCTYPE html>
 <html>

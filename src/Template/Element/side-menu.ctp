@@ -35,7 +35,7 @@
 			<figure class="has-text-centered">
 			  <img src="/img/assets/riehl_avatar.png" alt="" style="max-height:100%; border-radius:50%; width: 100px;">
 			</figure>
-		<h2 class="subtitle is-7 has-text-centered has-text-weight-bold">Mr FALILU ABUDUL</h2>
+		<h2 class="subtitle is-7 has-text-centered has-text-weight-bold">Mr TONTON B</h2>
 
 		<aside class="menu">
 		  <ul class="menu-list">

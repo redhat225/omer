@@ -1,5 +1,5 @@
 <h1 class="title is-pad-top-20">
-	Bonjour, Mr FALILU
+	Bonjour, TONTON B
 </h1>
 <h2 class="subtitle is-6 has-text-grey">Bienvenue sur votre tableau de bord</h2>
 
