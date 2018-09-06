@@ -55,17 +55,6 @@
 										</div>
 									</div>
 							</div>
-							<div class="field is-horizontal is-pad-top-5">
-									<div class="field-body">
-										<div class="field">
-											<p class="control is-fullwidth">
-		                   						<a target="_self" class="button has-text-weight-bold is-white is-outlined is-fullwidth" href="/admins/tour">
-		                   							En savoir plus
-		                   						</a>
-											</p>
-										</div>
-									</div>
-							</div>
 						</form>
                </div>
 

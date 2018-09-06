@@ -57,7 +57,6 @@ Router::scope('/admins', function (RouteBuilder $routes) {
     $routes->connect('/dashboard', ['controller' => 'Admins', 'action' => 'index']);
     $routes->connect('/login', ['controller' => 'Admins', 'action' => 'login']);
     $routes->connect('/logout', ['controller' => 'Admins', 'action' => 'logout']);
-    $routes->connect('/tour', ['controller' => 'Admins', 'action' => 'tour']);
     // $routes->fallbacks(DashedRoute::class);
 });
 
