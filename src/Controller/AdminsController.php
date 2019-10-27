@@ -38,14 +38,27 @@ class AdminsController extends AppController
     public function initialize()
     {
         parent::initialize();
+        $this->loadModel('Registers');
         $this->Auth->allow(['login','logout','forgot','tour']);
     }
 
     public function index(){
-        // $this->viewBuilder()->layout('blank');
+
+        // if(($registers = Cache::read('content','register_cache_engine')) === false) {
+        //           $registers = $this->Registers->find()->first();
+        //           $regs = json_decode($registers->register_content);
+        //           Cache::write('content', $regs,'register_cache_engine');
+        // }else{
+        //     $regs = Cache::read('content','register_cache_engine');
+        //     // debug($regs);
+        //     // die();
+        // }
+
+
     }
 
     public function tour(){
+        // die("tour");
         $this->viewBuilder()->layout('tour');
     }
 
@@ -76,6 +89,16 @@ class AdminsController extends AppController
             }
         }else
         {
+            // $g = new \Google\Authenticator\GoogleAuthenticator();
+            
+            // $salt = '7WAO342QFANY6IKBF7L7SWEUU79WL3VMT92';
+            // $secret = "riehl".$salt;
+            // // debug($secret);
+            // // die();
+            // $code = $g->getURL('remmanuel225',$this->request->env('SERVER_NAME'),$secret);
+            // $response = ['code'=>$code];
+            // $this->set(compact('response'));
+            // $this->set('_serialize',['response']);
             $this->viewBuilder()->layout('login');
         }
     }

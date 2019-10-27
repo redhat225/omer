@@ -1,0 +1,10 @@
+kpis:
+- en fonction d'une période définie , sortir la liste des projets en fonction des dept, secteurs activité,
+- audit terminés dans le temps (en fonction des temps delimités d'audit)
+- nombre total audit effectués segmentés en secteurs activité
+- ex secteur bancaire, 35% non compliant PCI DSS, vulnérabilités récurrentes
+- sortir les vulnérabilités courantes e fonction des depts
+- d'une periode A à une période B l'évolution du risque, (dimuinution/augmentation), les risques résiduels
+- les vulnérabilités récurrentes / secteur
+- fiche de temps (pour evaluer la performance des auditeurs)
+

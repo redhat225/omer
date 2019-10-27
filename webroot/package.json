@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^10.0.4",
+    "@ckeditor/ckeditor5-build-balloon": "^11.2.0",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^11.2.0",
+    "@ckeditor/ckeditor5-build-inline": "^11.2.0",
+    "@ckeditor/ckeditor5-ckfinder": "^10.0.0",
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.10",
     "angular-base64-upload": "^0.1.23",
@@ -26,9 +31,11 @@
     "bulma-extensions": "^1.0.14",
     "cleave.js": "^1.3.3",
     "file-saver": "^1.3.8",
+    "highcharts": "^7.0.0",
     "hover.css": "^2.3.1",
     "howler": "^2.0.9",
     "ng-file-upload": "^12.2.13",
+    "tinymce": "^4.9.1",
     "toastr": "^2.1.4"
   }
 }

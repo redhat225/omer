@@ -7,14 +7,17 @@
 
 
 
-<div class="columns is-centered is-mar-bot-0 mcen-skyblue-b" style="overflow: hidden; position: relative;" ng-controller="LoginController as logincontroller">
-	<div class="column is-4 is-pad-bot-200">
+<div class="columns is-centered is-mar-bot-0 mcen-skyblue-b" style="overflow: hidden;" ng-controller="LoginController as logincontroller">
+	<div class="column is-8 is-pad-bot-0 is-pad-rgt-0" style="background: url('/img/assets/chartkit/wallpaper-1.jpg') no-repeat black 50%;">
+	</div>
+	<div class="column is-4 eben-black-b is-pad-bot-0 is-pad-rgt-0">
 		<div class="section is-medium">
-               <div class="has-text-left-mobile has-text-centered-widescreen">
-					<figure class=>
-						<img src="/img/assets/logo.png" width="100%" alt="">
-					</figure>
-               </div>
+					<h1 class="title has-text-white">
+						Mon Compte
+					</h1>
+					<h2 class="subtitle is-6 has-text-grey">
+						Veuillez vous identifier afin d'accéder à la plateforme de gestion des projets
+					</h2>
                      <div>
 						<form ng-submit="logincontroller.login(logincontroller.credentials)" name="loginBlogForm" class="is-pad-top-40">
 							<!-- Identifiant -->
@@ -57,8 +60,6 @@
 							</div>
 						</form>
                </div>
-
-
 		</div>
 	</div>
 </div>

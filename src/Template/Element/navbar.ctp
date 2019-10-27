@@ -1,17 +1,11 @@
 <!-- Home interface -->
-<nav class="navbar is-pad-top-5 is-pad-bot-5 is-primary" style="border-bottom:2px solid #f8580052;">
+<nav class="navbar is-pad-top-5 is-pad-bot-5 eben-black-b" style="border-bottom:2px solid #f8580052;">
 	<div class="navbar-brand">
-		<a ui-sref="admins.dashboard" class="navbar-item">
-			<img src="/img/assets/chartkit/oci_web_project_logo_2.png" alt="Orange Security Projects" style="max-height: 100%;max-width:200px;" >
-		</a>
-		
 		<a class="navbar-item trigger-resizer has-text-oci is-hidden-mobile">
 			<span class="icon is-medium">
 	       	  <i class="fas fa-bars is-ft-sz-25"></i>
 	       </span>
 		</a>
-
-
 	    <button class="button navbar-burger">
 	      <span></span>
 	      <span></span>
@@ -20,17 +14,6 @@
 	</div>
 	<div class="navbar-menu">
 		<div class="navbar-end">
-			<a  class="navbar-item" href="/admins/logout" target="_self">
-				<button class="button is-oci" ui-sref="admins.dashboard">
-					<span class="icon">
-						<i class="fab fa-dyalog"></i>
-					</span>
-					<span>
-						Dashboard
-					</span>
-				</button>
-			</a>	
-			
 			<a class="navbar-item" ui-sref="admins.sessions({page_id:1})">
 				<span class="icon has-text-intercoton-green">
 					<i class="fa fa-sticky-note" aria-hidden="true"></i>

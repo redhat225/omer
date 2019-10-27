@@ -1,0 +1,33 @@
+[{
+	"id":"1",
+	"conditions":[
+	{
+		"condition_id":"1.1",
+		"condition_label":" Établissement et mise en œuvre des normes de configuration des pare-feu et des routeurs comprenant les éléments suivants :",
+		"procedures":[{
+			"procedure_id":"1.1.a",
+			"procedure_label":"Inspecter les normes de configuration de pare-feu et de routeurs et autres documents spécifiés ci-dessous pour vérifier que les normes sont complètes et mises en œuvre comme suit :",
+			"procedure_is_testable":false
+		}]
+	},
+	{
+		"condition_id":"1.1.1",
+		"condition_label":"Processus formel d’approbation et de test de toutes les connexions réseau et des modifications apportées aux configurations des pare-feu et des routeurs",
+		"procedures":[{
+			"procedure_id":"1.1.1.a",
+			"procedure_label":"Examiner les procédures documentées pour vérifier qu’un processus formel de test et d’approbation est présent pour : <br>toutes les connexions du réseau et <br />Toutes les modifications de pare-feu et de routeur.",
+			"procedure_is_testable":true	
+		},
+		{
+			"procedure_id":"1.1.1b",
+			"procedure_label":"Pour obtenir un échantillon des connexions du réseau, interroger le personnel responsable et examiner les archives afin de vérifier que les connexions de réseau ont été approuvées et testées.",
+			"procedure_is_testable":true
+		},
+		{
+			"procedure_id":"1.1.1c",
+			"procedure_label":"Identifier un échantillon d’une modification effectivement apportée aux configurations de pare-feu et de routeur, comparer à la modification des archives et interroger le personnel responsable pour vérifier que les changements ont été approuvés et testés.",
+			"procedure_is_testable":true
+		}]
+	}]
+
+}]

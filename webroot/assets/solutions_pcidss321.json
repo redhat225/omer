@@ -1,0 +1,30 @@
+[{
+	"solution_linked_condition_id":"3.4",
+	"solution_problematic":"Chiffrement",
+	"solution_constructor":"SYMANTEC",
+	"solution_link":"https://www.symantec.com/products/endpoint-encryption",
+	"solution_logo":"symantect_endpoint.gif",
+	"solution_denomination":"SYMANTEC Endpoint Encryption",
+	"solution_full_description":"Symantec offre une solution compréhensive pour protéger les données sensibles, où qu'elles soient, en vous assurant que seuls les utilisateurs authentifiés peuvent y accéder. Évitez la perte de données en révoquant l'accès utilisateur grâce à une surveillance et à des contrôles centralisés",
+	"solution_assets":["Chiffrement données au repos","Chiffrement e-mails","Chiffrement tiers","Infrastructure de gestion des clés"]
+},
+{
+	"solution_linked_condition_id":"8.5",
+	"solution_problematique":"Gestion des accès à hauts privilèges",
+	"solution_constructor":"CYBERARK",
+	"solution_logo":"cyberark.gif",
+	"solution_denomination":"CYBERARK PSM",
+	"solution_link":"https://www.cyberark.com/fr/",
+	"solution_full_description":"CyberArk PSM est une solution dédiée à la gestion des accès à hauts privilèges, leader du GARTNER Quadrant",
+	"solution_assets":["Enregistrements et traces correctement protégés","Possibilité de sécuriser et rejouer les comptes locaux après authentification tierce des opérateurs","Détection et blocage des commandes/actions dangereuses"]
+},
+{
+	"solution_linked_condition_id":"8.3",
+	"solution_problematic":"Authentification Forte",
+	"solution_constructor":"GEMALTO",
+	"solution_logo":"safenet.gif",
+	"solution_link":"https://safenet.gemalto.com/",
+	"solution_denomination":"GEMALTO Safenet",
+	"solution_full_description":"SAFENET de GEMALTO offre une solution permettant de renforcemer les mesures de contrôle lors de l’authentification et garantir sa traàcabilité ainsi que la non répudiation des traces",
+	"solution_assets":["Politiques OTP robustes","Gestion centralisé des accès","Authentification multi facteurs","Reporting détaillé et automatisé","Administration fluide et facilité"]
+}]

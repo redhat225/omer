@@ -187,7 +187,25 @@ Type::build('datetime')
     ->useImmutable();
 Type::build('timestamp')
     ->useImmutable();
+// liqueur de toile
+Plugin::load('CakePdf', ['bootstrap' => true]);
 
+// CakePdf Custom Configuration
+Configure::write('CakePdf',[
+        'engine' => [
+            'className' => 'CakePdf.WkHtmlToPdf',
+            'binary' => '/usr/bin/wkhtmltopdf',
+            'options' => [
+                'print-media-type' => false,
+                'outline' => true,
+                'dpi' => 96,
+                // 'user-style-sheet' => "/webroot/css/../node_modules/bulma/custom_bulma.css"
+                // 'footer-line' =>true,
+                // 'use-xserver' => true,
+            ]
+        ]
+]);
+/*
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
  * table, model, controller names or whatever other string is passed to the

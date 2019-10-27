@@ -42,7 +42,7 @@ class FlushUsers extends AbstractMigration
             "user_sexe" => "H",
             "user_contact" => "87853436",
             "user_email" => "riehlemm@gmail.com",
-            "user_photo" => "riehl.png",
+            "user_photo" => "riehl.jpg",
             "user_job" => "Ingénieur Sécurité",
             "created" => $now_formatted,
             "modified" => $now_formatted]
@@ -111,7 +111,7 @@ class FlushUsers extends AbstractMigration
             ["id" => Text::uuid(),
             "username" => "remmanuel225",
             "password" => '$2y$10$fvMsIN8Y9kbPa1MpqT1ogO7NNw6W/eL6nCJBV8WRmKUgEiROs3uXu',
-            "user_avatar" => "riehl_avatar.png",
+            "user_avatar" => "avatar.jpg",
             "user_is_active" => true,
             "created_by" => $user_id_1,
             "created" => $now_formatted,

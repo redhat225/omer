@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$pageDescription = 'Business Intelligence : KPI CENTER Corporation';
+$pageDescription = 'DATAPROTECT-Security Project';
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,11 +36,8 @@ $pageDescription = 'Business Intelligence : KPI CENTER Corporation';
     <?= $this->fetch('script') ?>
 </head>
 <body ng-app="login" ng-controller="MainCtrl as mainctrl">
-    
     <?= $this->fetch('content') ?>
     <!-- Load angular app here -->
-
-
 <script
   src="https://code.jquery.com/jquery-1.11.2.min.js"
   integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
