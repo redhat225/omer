@@ -6,16 +6,19 @@
 
 		  <div class="quickview-body">
 		    <div class="quickview-block">
-		    <table class="is-fullwidth is-striped is-hoverable">
-		    	<tr ng-repeat="solution in solutions_pcidss321" ng-if="solution.solution_linked_condition_id == initial_audit_report_quick_view_condition_id">
-		    		<td>
-        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-        <br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-		    		</td>
-		    	</tr>
-		    </table>
-
+		    	<div class="box" ng-repeat="solution in solutions_pcidss321" ng-if="solution.solution_linked_condition_id == initial_audit_report_quick_view_condition_id">
+		    		<p>
+				        <strong>{{solution.solution_constructor}}</strong> <br>
+				        <span>
+				        	{{solution.solution_denomination}}
+				        </span> <br>
+				        <span>{{solution.solution_full_description}}</span>
+				        <a href="{{solution.solution_link}}">
+				        	lien
+				        </a> <br>
+		    		</p>
+		    		<div class="is-divider" data-content="OR"></div>
+		    	</div>
 		    </div>
 		  </div>
 

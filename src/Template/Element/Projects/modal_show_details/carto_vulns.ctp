@@ -27,6 +27,7 @@
 		<div class="dropdown is-hoverable">
 		  <div class="dropdown-trigger">
 		    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+		     <span class="has-text-weight-semibold">Menu</span>
 		      <span class="icon is-small">
 		        <i class="fa fa-bars" aria-hidden="true"></i>
 		      </span>
@@ -36,6 +37,9 @@
 		    <div class="dropdown-content">
 		      <div class="dropdown-item">
 		      	  <a href="/sheet/corrections/{{current_selected_project.tmp_vulnerabilities_id}}.pdf" target="_blank">Exportation PDF</a>
+			      <span class="icon is-small">
+			        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+			      </span>
 		      </div>
 		    </div>
 		  </div>

@@ -33,19 +33,38 @@ class FlushUsers extends AbstractMigration
         $table = $this->table('users');
         $user_id_1 = Text::uuid();
         $user_id_2 = Text::uuid();
+        $user_id_3 = Text::uuid();
         $now = new \DateTime();
         $now_formatted = $now->format('Y-m-d H:i:s');
 
         $users = [
             ["id" => $user_id_1,
-            "user_fullname" => "RIEHL Emmanuel",
+            "user_fullname" => "Emmanuel RIEHL",
             "user_sexe" => "H",
             "user_contact" => "87853436",
-            "user_email" => "riehlemm@gmail.com",
+            "user_email" => "eriehl@dataprotect.ma",
             "user_photo" => "riehl.jpg",
-            "user_job" => "Ingénieur Sécurité",
+            "user_job" => "Consultant Sécurité SI",
             "created" => $now_formatted,
-            "modified" => $now_formatted]
+            "modified" => $now_formatted],
+            ["id" => $user_id_2,
+            "user_fullname" => "Hafsa Zguioui",
+            "user_sexe" => "H",
+            "user_contact" => "87853437",
+            "user_email" => "h.zguioui@dataprotect.ma",
+            "user_photo" => "hafsa.jpeg",
+            "user_job" => "Consultante Sécurité SI",
+            "created" => $now_formatted,
+            "modified" => $now_formatted],
+            ["id" => $user_id_3,
+            "user_fullname" => "Boris NCHO",
+            "user_sexe" => "H",
+            "user_contact" => "87853438",
+            "user_email" => "b.ncho@dataprotect.ma",
+            "user_photo" => "boris.jpg",
+            "user_job" => "Consultant Sécurité SI",
+            "created" => $now_formatted,
+            "modified" => $now_formatted],
         ];
 
 
@@ -117,6 +136,26 @@ class FlushUsers extends AbstractMigration
             "created" => $now_formatted,
             "modified" => $now_formatted,
             "user_id" => $user_id_1,
+            "role_id" => $system_role],
+            ["id" => Text::uuid(),
+            "username" => "hafsa2019",
+            "password" => '$2y$10$ooE0eeyDVWeBBcHrC1s/I..Xuz2LwLux3SVLhtfLjXS30bjq15FM6',
+            "user_avatar" => "hafsa.jpg",
+            "user_is_active" => true,
+            "created_by" => $user_id_1,
+            "created" => $now_formatted,
+            "modified" => $now_formatted,
+            "user_id" => $user_id_2,
+            "role_id" => $system_role],
+            ["id" => Text::uuid(),
+            "username" => "boris2019",
+            "password" => '$2y$10$w.ij2enSyrsQeVP0B4PHY./qLui4W6LqzJY8wwn3aM9EpLXRjV732',
+            "user_avatar" => "boris.png",
+            "user_is_active" => true,
+            "created_by" => $user_id_1,
+            "created" => $now_formatted,
+            "modified" => $now_formatted,
+            "user_id" => $user_id_3,
             "role_id" => $system_role]
         ];
 

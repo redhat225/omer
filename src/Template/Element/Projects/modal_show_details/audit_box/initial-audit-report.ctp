@@ -277,7 +277,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -285,21 +285,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -307,7 +316,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -316,6 +328,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -354,7 +369,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -362,21 +377,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -384,7 +408,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -393,6 +420,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -431,7 +461,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -439,21 +469,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -461,16 +500,22 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
 											</select>
 
-										 ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"</div>
+										</div>
 									</div>
 						  	 	</td> 
-		 ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"				  	</tr>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>			  	
+		</tr>
 						  </tbody>
 						</table ng-click="show_initial_audit_report_quick_view(requirement.condition_id)">
 						</div>
@@ -508,7 +553,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -516,21 +561,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -538,7 +592,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -547,6 +604,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -585,7 +645,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -593,21 +653,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -615,7 +684,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -623,6 +695,9 @@
 
 										</div>
 									</div>
+						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
 						  	 	</td> 
 						  	</tr>
 						  </tbody>
@@ -662,7 +737,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -670,21 +745,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -692,7 +776,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -701,6 +788,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -739,7 +829,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -747,21 +837,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -769,19 +868,25 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
 											</select>
 
-										 ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"</div>
+										</div>
 									</div>
 						  	 	</td> 
-			 ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"			  	</tr>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td> 
+			 			  	</tr>
 						  </tbody>
 						</table>
- ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"						</div>
+						</div>
 			      </article>
 			    </se ng-click="show_initial_audit_report_quick_view(requirement.condition_id)"ction>
 			</div>
@@ -816,7 +921,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -824,21 +929,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -846,7 +960,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -855,6 +972,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -893,7 +1013,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -901,21 +1021,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -923,7 +1052,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -932,6 +1064,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -970,7 +1105,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -978,21 +1113,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -1000,7 +1144,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -1009,6 +1156,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>
@@ -1047,7 +1197,7 @@
 						  		<th class="narrow_cell">
 						  			{{requirement.procedure_id}} {{requirement.procedure_label}}
 						  		</th>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-class="determine_audit_verdict_color_initial_report(requirement.procedure_verdict)" ng-change="requirement.color_cell_stripe=eval_audit_verdict_color_initial_report(requirement.procedure_verdict,requirement.parent_condition_id)" ng-model="requirement.procedure_verdict" ng-options="audit_verdict for audit_verdict in register.projects.audits.verdict_states">
@@ -1055,21 +1205,30 @@
 										</div>
 									</div>
 						  	 	</td>
- 						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+ 						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.procedure_comments" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 									<div class="field">
 									  <div class="control">
 									    <textarea class="textarea is-small" ng-model="requirement.associated_site" placeholder="Small textarea"></textarea>
 									  </div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required ng-model="requirement.doc_state"  ng-options="doc_state for doc_state in register.projects.audits.doc_states">
@@ -1077,7 +1236,10 @@
 										</div>
 									</div>
 						  	 	</td>
-						  	 	<td>
+	  	 						<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
+						  	 	<td ng-if="requirement.procedure_is_testable == true">
 								   <div class="control">
 										<div class="select is-small">
 											<select required  ng-model="requirement.site_state" ng-options="site_state for site_state in register.projects.audits.site_states">
@@ -1086,6 +1248,9 @@
 										</div>
 									</div>
 						  	 	</td> 
+						  	 	<td ng-if="requirement.procedure_is_testable == false">
+								   &nbsp;
+						  	 	</td>
 						  	</tr>
 						  </tbody>
 						</table>

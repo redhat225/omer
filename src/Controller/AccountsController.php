@@ -149,7 +149,7 @@ class AccountsController extends AppController
             if($this->request->is('post')){
                 $data = $this->request->data;
                 $user_account = $this->UserAccounts->get($data['account_id']);
-                $user_account->password = 'Orange@2018++';
+                $user_account->password = 'Dataprotect@2018++';
                 if($this->UserAccounts->save($user_account)){
                     $response = ['message' => 'ok'];
                     $this->RequestHandler->renderAs($this, 'json');

@@ -28,37 +28,37 @@
 	  <ul class="modal-hover-tabs">
 	    <li class="is-active">
 	      <a ng-click="workflow_tab = 'history'">
-	        <span class="icon is-small"><i class="fas fa-history"></i></span>
+	        <span class="icon is-small"><i class="fa fa-info"></i></span>
 	        <span>Details</span>
 	      </a>
 	    </li>
 	    <li class="">
 	      <a ng-click="workflow_tab = 'audit'">
-	        <span class="icon is-small"><i class="fas fa-history"></i></span>
+	        <span class="icon is-small"><i class="fa fa-search"></i></span>
 	        <span>Audit</span>
 	      </a>
 	    </li>
 	    <li>
 	      <a ng-click="workflow_tab = 'carto'">
-	        <span class="icon is-small"><i class="fas fa-comments"></i></span>
+	        <span class="icon is-small"><i class="fa fa-map"></i></span>
 	        <span>Cartographie Vulnérabilités</span>
 	      </a>
 	    </li>	    
 	    <li>
 	      <a ng-click="workflow_tab = 'comments'">
-	        <span class="icon is-small"><i class="fas fa-comments"></i></span>
+	        <span class="icon is-small"><i class="fa fa-calendar"></i></span>
 	        <span>Planning</span>
 	      </a>
 	    </li>
 	    <li>
 	      <a ng-click="workflow_tab = 'history_details'">
-	        <span class="icon is-small"><i class="fas fa-comments"></i></span>
+	        <span class="icon is-small"><i class="fa fa-history"></i></span>
 	        <span>Historique</span>
 	      </a>
 	    </li>
 	    <li>
 	      <a ng-click="workflow_tab = 'docs'">
-	        <span class="icon is-small"><i class="fas fa-file-archive"></i></span>
+	        <span class="icon is-small"><i class="fa fa-archive"></i></span>
 	        <span>Livrables</span>
 	      </a>
 	    </li>
@@ -217,7 +217,7 @@
 					</div>
 					<div ng-switch-when="comments">
 						<form ng-submit="update_project_planning(current_selected_project.project_plannings[0].planning_meta)" name="planning_form">
-							<div class="steps">
+ 							<div class="steps">
 							  <div class="step-item is-eben">
 							    <div class="step-marker">
 									T-1
@@ -262,7 +262,7 @@
 								<div class="column has-text-centered is-centered">
 									<button class="button is-eben">Modifier</button>
 								</div>
-							</div>
+							</div> 
 						</form>
 					</div>
 					<div ng-switch-when="history_details">

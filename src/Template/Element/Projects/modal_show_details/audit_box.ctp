@@ -2,6 +2,7 @@
 	<div class="dropdown is-hoverable">
 		  <div class="dropdown-trigger">
 		    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+		    	<span class="has-text-weight-semibold">Menu</span>
 		      <span class="icon is-small">
 		        <i class="fa fa-bars" aria-hidden="true"></i>
 		      </span>

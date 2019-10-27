@@ -24,7 +24,7 @@
      			<div class="span level-item">
 					<div class="field has-addons is-expanded">
 						<div class="control is-expanded">
-							<input type="text" class="input" ng-model="filter_keys" style="height:36px !important;">
+							<input type="text" class="input" ng-model="filter_keys">
 						</div>
 						<div class="control">
 							<a class="button is-intercoton-green is-static">
@@ -116,7 +116,7 @@
 											  <div class="dropdown-trigger">
 											    <button class="button">
 											      <span class="icon is-small">
-													<i class="fas fa-cogs menu-icon"></i>
+													<i class="fa fa-bars"></i>
 											      </span>
 											    </button>
 											  </div>

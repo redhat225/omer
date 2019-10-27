@@ -37,6 +37,7 @@ $pageDescription = "DATAPROTECT-Security Project";?>
     <!-- Another Css -->
     <?= $this->Html->css('../node_modules/toastr/build/toastr.min') ?>
     <?= $this->Html->css('loading-bar-custom') ?>
+    <?= $this->Html->css('../node_modules/bulma-extensions/bulma-calendar/dist/css/bulma-calendar.min') ?>
 
     <?= $this->fetch('css') ?>
 
@@ -59,6 +60,7 @@ $pageDescription = "DATAPROTECT-Security Project";?>
     <?= $this->Html->script('../node_modules/angular-loading-bar/src/loading-bar') ?>
     <?= $this->Html->script('../node_modules/angular-file-saver/dist/angular-file-saver.bundle') ?>
     <?= $this->Html->script('../node_modules/bulma-extensions/bulma-quickview/dist/bulma-quickview.min') ?>
+    <?= $this->Html->script('../node_modules/bulma-extensions/bulma-calendar/dist/js/bulma-calendar.min') ?>
     
     <base href="/admins/">
 </head>

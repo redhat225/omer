@@ -28664,12 +28664,10 @@ html {
   cursor: pointer; }
 
 input {
-  height: 40px !important;
   border-radius: 0px !important;
   border: 2px solid grey !important; }
 
 button {
-  height: 40px !important;
   border-radius: 0px !important; }
 
 a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
