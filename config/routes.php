@@ -77,6 +77,11 @@ Router::scope('/views', function (RouteBuilder $routes) {
     // $routes->fallbacks(DashedRoute::class);
 });
 
+Router::scope('/zine', function (RouteBuilder $routes) {
+    $routes->connect('/read', ['controller' => 'Zine', 'action' => 'read']);
+    // $routes->fallbacks(DashedRoute::class);
+});
+
 Router::scope('/sheet', function (RouteBuilder $routes){
     $routes->connect('/corrections/:vuln_id', ['controller' => 'Sheet', 'action' => 'corrections']);
     // $routes->fallbacks(DashedRoute::class);
@@ -91,6 +96,7 @@ Router::scope('/projects', function (RouteBuilder $routes) {
     $routes->connect('/write',['controller' => 'Projects', 'action' => 'write']);
     $routes->connect('/view',['controller' => 'Projects', 'action' => 'view']);
     $routes->connect('/close',['controller' => 'Projects', 'action' => 'close']);
+    $routes->connect('/refresh',['controller' => 'Projects', 'action' => 'refresh']);
     // $routes->fallbacks(DashedRoute::class);
 });
 

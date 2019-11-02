@@ -11,6 +11,22 @@ angular.module('login',[])
 		self.credentials = {
 			remember_me: false
 		};
+
+		$scope.login_switch = 'phase1';
+
+		$scope.login_switch_trigger = function(id){
+			switch(id){
+				case 1:
+					$scope.login_switch = 'phase1';
+				break;
+
+				case 2:
+					$scope.login_switch = 'phase2';
+				break;
+			}
+		}
+
+
 		self.login = function(credentials){
 			self.is_authenticating = true;
 			self.isSubmitting = 'is-loading';

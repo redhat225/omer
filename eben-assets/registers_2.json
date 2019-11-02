@@ -1,7 +1,7 @@
 {
 	"projects":{
 		"dept_explicit":["Gouvernace Risque Conformité (GRC)","Sécurité des Moyens de paiement (SMP)"],
-		"dept_short":[{"name":"GRC","perimeters":["ISO 27001","ISO 22301"]},{"name":"SMP","perimeters":["PCIDSS","PADSS","3DS","PIN SECURITY"]}],
+		"dept_short":[{"name":"GRC","perimeters":["ISO 27001","ISO 22301"]},{"name":"SMP","perimeters":["PCIDSS","PADSS","3DS","PIN SECURITY"]},{"name":"PENTEST","perimeters":["Web","Interne","Iot","Revue Code","Audit Configuration","Durcissement"]},{"name":"SOC","perimeters":["Surveillance"]}],
 		"team":["Boris NCHO","Emmanuel RIEHL","Hafsa ZGUIOUI"],
 		"team_roles":["SPOC"],
 		"years":["2017","2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033","2034","2035","2036","2037"],

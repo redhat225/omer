@@ -7,8 +7,8 @@
 		"procedure_meta":"1_1_a",
 		"procedure_verdict":"N/T",
 		"procedure_label":"Inspecter les normes de configuration de pare-feu et de routeurs et autres documents spécifiés ci-dessous pour vérifier que les normes sont complètes et mises en œuvre comme suit :",
-		"procedure_is_testable":false,
-		"procedure_is_child":false,
+		"procedure_is_testable":"false",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
@@ -24,14 +24,14 @@
 		"procedure_meta":"1_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les procédures documentées pour vérifier qu’un processus formel de test et d’approbation est présent pour\n Toutes les connexions du réseau\n Toutes les modifications de pare-feu et de routeur",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"1",
@@ -42,14 +42,14 @@
 		"procedure_meta":"1_1_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Pour obtenir un échantillon des connexions du réseau, interroger le personnel responsable et examiner les archives afin de vérifier que les connexions de réseau ont été approuvées et testées.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"1",
@@ -60,14 +60,14 @@
 		"procedure_meta":"1_1_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Identifier un échantillon d’une modification effectivement apportée aux configurations de pare-feu et de routeur, comparer à la modification des archives et interroger le personnel responsable pour vérifier que les changements ont été approuvés et testés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 
@@ -80,14 +80,14 @@
 		"procedure_meta":"1_1_2_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner le ou les diagrammes et observer les configurations de réseau pour vérifier qu’un diagramme du réseau actuel existe bien et qu’il documente toutes les connexions aux données de titulaires de carte, y compris tout réseau sans-fil.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	{
@@ -99,14 +99,14 @@
 		"procedure_meta":"1_1_2_b",
 		"procedure_verdict":"Non",
 		"procedure_label":" Interroger le personnel responsable pour vérifier que le diagramme est tenu à jour.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	{
@@ -118,14 +118,14 @@
 		"procedure_meta":"1_1_3",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner le diagramme des flux de données et interroger le personnel pour vérifier que le diagramme\nMontre le flux des données de titulaires de carte dans les systèmes et les réseau\n Est conservé à jour et mis à jour si besoin suite aux changements de l’environnement.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	
@@ -138,14 +138,14 @@
 		"procedure_meta":"2_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Choisir un échantillon des composants de système et essayer d’ouvrir une session (avec l’aide de l’administrateur du système) sur les appareils et applications en utilisant les comptes et mots de passe par défaut fournis par le fournisseur, pour vérifier que TOUS les mots de passe par défaut (y compris ceux des systèmes d’exploitation, des logiciels qui assurent des services de sécurité, des comptes d’application et de système, des terminaux de POS et des chaînes de communauté de protocole de gestion simple de réseau [SNMP]) ont été changés. (Se référer aux manuels du fournisseur et aux sources disponibles sur Internet pour rechercher les comptes/mots de passe définis par le fournisseur",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	{
@@ -157,14 +157,14 @@
 		"procedure_meta":"2_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":" Pour l’échantillon de composants de système, vérifier que tous les comptes par défaut inutiles (y compris les comptes utilisés par les systèmes d’exploitation, les applications, les systèmes, les terminaux de POS, SNMP, etc.) sont éliminés ou désactivés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	{
@@ -176,14 +176,14 @@
 		"procedure_meta":"2_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Interroger le personnel et examiner la documentation connexe pour vérifier que\nTous les paramètres de fournisseur par défaut (y compris les mots de passe par défaut des systèmes d’exploitation, les logiciels assurant des services de sécurité, les comptes d’application et de système, les terminaux de POS, les chaînes de communauté SNMP, etc.) sont changés avant qu’un système ne soit installé sur le résea\nLes comptes par défaut inutiles (y compris les comptes utilisés par les systèmes d’exploitation, les applications, les systèmes, les terminaux de POS, SNMP, etc.) sont éliminés ou désactivés avant qu’un système ne soit installé sur le réseau.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -195,14 +195,14 @@
 		"procedure_meta":"3_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les politiques, procédures et processus de conservation et d’élimination des données pour vérifier qu’ils comprennent les points suivants pour le stockage de toutes les données de titulaires de carte :\nLimiter la quantité des données stockées et les délais de conservation selon les conditions requises par les conditions légales, réglementaires et/ou commerciales.\nDes conditions spécifiques de conservation des données de titulaires de carte (par exemple, ces données doivent être conservées pendant une période X pour des raisons professionnelles Y).\nTraiter la suppression sécurisée des données de titulaires de carte lorsque ces dernières ne sont plus requises pour des raisons légales, réglementaires ou commerciales.\nUn processus trimestriel pour l’identification et la suppression sécurisée des données de titulaires de carte stockées excédant les conditions de conservation définies.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"3",
@@ -213,14 +213,14 @@
 		"procedure_meta":"3_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Interroger le personnel pour vérifier que :\nTous les emplacements où des données de titulaires de carte sont stockées sont inclus dans les processus de rétention et d’élimination.\nUn processus trimestriel automatique ou manuel est en place pour l’identification et la suppression sécurisée des données de titulaires de carte stockées.\nLe processus trimestriel automatique ou manuel est effectué sur tous les emplacements de données de titulaires de carte.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"3",
@@ -231,14 +231,14 @@
 		"procedure_meta":"3_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Pour un échantillon des composants de système qui stockent les données de titulaires de carte :\nExaminer les archives de fichiers et de système pour vérifier que les données stockées n’excèdent pas les conditions définies dans la politique de conservation des données.\nObserver le mécanisme d’élimination pour vérifier que les données sont éliminées de manière sécurisée.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"3",
@@ -249,14 +249,14 @@
 		"procedure_meta":"3_4_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner la documentation relative au système utilisé pour protéger le PAN, notamment le fournisseur, le type de système/processus et les algorithmes de cryptage (le cas échéant) pour vérifier que le PAN est rendu illisible en utilisant l’une des méthodes suivantes :\nHachage unilatéral s’appuyant sur une méthode cryptographique robuste ;\nTroncature ;\nJetons et pads d’index, les pads devant être stockés de manière sécurisée ;\nCryptographie robuste associée aux processus et procédures de gestion des clés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"3",
@@ -267,14 +267,14 @@
 		"procedure_meta":"3_4_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner plusieurs tables ou fichiers d’un échantillon de référentiels de données afin de vérifier que le PAN est rendu illisible (en d’autres termes, qu’il n’est pas stocké en texte clair).",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"3",
@@ -285,14 +285,14 @@
 		"procedure_meta":"3_4_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner un échantillon de support amovible (par exemple, bandes de sauvegarde) pour s’assurer que le PAN est rendu illisible.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"3",
@@ -303,14 +303,14 @@
 		"procedure_meta":"3_4_d",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner un échantillon de journaux d’audit, y compris les journaux d’application de paiement, pour confirmer que le PAN est bien illisible ou supprimé des journaux.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"3",
@@ -321,14 +321,14 @@
 		"procedure_meta":"3_4_e",
 		"procedure_verdict":"Non",
 		"procedure_label":"Si les versions hachées et tronquées du même PAN sont présentes dans l’environnement, examiner les contrôles en place pour vérifier que les versions hachées et tronquées ne peuvent pas être corrélées pour reconstituer le PAN d’origine.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"4",
@@ -339,14 +339,14 @@
 		"procedure_meta":"4_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Identifier tous les emplacements où les données de titulaires de carte sont transmises ou reçues sur des  réseaux publics ouverts. Examiner les normes documentées et comparer aux configurations de système pour vérifier l’utilisation de protocoles de sécurité et l’utilisation d’une cryptographie robuste pour tous les emplacements.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -357,14 +357,14 @@
 		"procedure_meta":"4_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les politiques et les procédures documentées pour vérifier que des processus sont documentés pour les points suivants :\nPour l’acceptation exclusive des clés/certificats approuvés\nPour que le protocole utilisé prenne uniquement en charge les versions ou configurations sécurisées (pour que les versions ou configurations non sécurisées ne soient pas prises en charge)\nPour l’implémentation d’un niveau de cryptage approprié pour la méthodologie de cryptage employée",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -375,14 +375,14 @@
 		"procedure_meta":"4_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Sélectionner et observer un échantillon de transmissions entrantes et sortantes à mesure qu’elles surviennent (par exemple, en observant les processus systèmes ou le trafic réseau) afin de vérifier que toutes les données de titulaires de carte sont cryptées à l’aide d’une cryptographie robuste pendant le transfert.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -393,14 +393,14 @@
 		"procedure_meta":"4_1_d",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les clés et les certificats pour vérifier que seuls des clés/certificats approuvés sont acceptés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -411,14 +411,14 @@
 		"procedure_meta":"4_1_e",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les configurations de système pour vérifier que le protocole est déployé de manière à n’utiliser que des configurations sécurisées et qu’il ne prend en charge aucune version ou configuration non sécurisée.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -429,14 +429,14 @@
 		"procedure_meta":"4_1_f",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les configurations du système pour vérifier que le niveau de cryptage approprié est mis en œuvre pour la méthodologie de cryptage employée. (Vérifier les recommandations/meilleures pratiques du fournisseur.)",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -447,14 +447,14 @@
 		"procedure_meta":"4_1_g",
 		"procedure_verdict":"Non",
 		"procedure_label":"Pour les mises en œuvre d’un TLS, examiner les configurations système pour vérifier que le TLS est activé lorsque les données de titulaires de carte sont transmises ou reçues.Par exemple, pour les implémentations basées sur le navigateur :\nLa mention « HTTPS » apparaît comme protocole de l’adresse URL (Universal Record Locator, localisateur uniforme de ressource) du navigateur et\nLes données de titulaires de carte sont uniquement requises lorsque la mention « HTTPS » apparaît dans l’adresse URL.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"4",
@@ -465,14 +465,14 @@
 		"procedure_meta":"4_1_h",
 		"procedure_verdict":"Non",
 		"procedure_label":" En cas d’utilisation du SSL/TLS initial, suivez les procédures de test dans l’Annexe A2 : Autres conditions de la norme PCI DSS s’appliquant aux entités qui utilisent le SSL/TLS initial.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 
 	
@@ -485,14 +485,14 @@
 		"procedure_meta":"5_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Sur un échantillon de composants de système comprenant tous les types de systèmes d’exploitation généralement affectés par des logiciels malveillants, vérifier que des logiciels antivirus sont déployés et, le cas échéant, qu’une technologie de protection antivirus est en place.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"5",
@@ -503,14 +503,14 @@
 		"procedure_meta":"5_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner la documentation du fournisseur et examiner les configurations d’anti-virus pour vérifier que les programmes d’anti-virus :\nDétectent tous les types de logiciel malveillant connus,\nÉliminent tous les types de logiciel malveillant connus et\nProtègent contre tous les types de logiciel malveillant connus.Les exemples de types de logiciel malveillant connus comprennent les virus, les chevaux de Troie, les vers, les logiciels espions et publicitaires et les logiciels malveillants furtifs.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"5",
@@ -521,14 +521,14 @@
 		"procedure_meta":"5_1_2_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Interroger le personnel pour vérifier que l’évolution de la menace posée par les logiciels malveillants est surveillée et évaluée pour les systèmes n’étant pas actuellement considérés comme étant pas communément affectés par les logiciels malveillants, afin de confirmer que ces systèmes continuent d’opérer sans logiciel anti-virus.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -540,14 +540,14 @@
 		"procedure_meta":"6_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les politiques et les procédures pour vérifier que les processus sont définis pour les points suivants :\nPour identifier les nouvelles vulnérabilités de la sécurité.\nPour assigner un classement du risque des vulnérabilités qui comprend une identification des vulnérabilités à « haut risque » et des vulnérabilités« critiques ».\nPour utiliser des sources externes fiables pour les informations sur les vulnérabilités en matière de sécurité.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -559,14 +559,14 @@
 		"procedure_meta":"6_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Interroger le personnel responsable et examiner le processus pour vérifier que :\nLes nouvelles vulnérabilités de la sécurité sont identifiées.\nUne classification des risques est affectée aux vulnérabilités. Elle comprend une identification de toutes les vulnérabilités à « haut risque » et « critiques ».\nDes processus pour identifier les nouvelles vulnérabilités de sécurité comprennent l’utilisation des sources externes d’information sur la vulnérabilité de sécurité.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -578,14 +578,14 @@
 		"procedure_meta":"7_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner la politique écrite de contrôle des accès et vérifier que la politique comprend les points 7.1.1 à 7.1.4 comme suit :\nDéfinir les besoins d’accès et les affectations de privilèges pour chaque rôle.\nLa restriction d’accès des ID utilisateurs privilégiés aux privilèges les plus faibles nécessaires pour la réalisation du travail.\nL’affectation d’accès basée sur la classification et la fonction professionnelles de chaque employé.\nL’approbation documentée (électroniquement ou par écrit) par les parties autorisées pour tous les accès, y compris la liste de tous les privilèges spécifiques approuvés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"7",
@@ -596,14 +596,14 @@
 		"procedure_meta":"7_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":" Sélectionner un échantillon de rôles et vérifier que les besoins d’accès de chaque rôle sont définis et comprennent :\nLes composants de système et les ressources de données dont chaque rôle a besoin pour accéder aux fonctions de son poste ;\nIdentification des privilèges nécessaires pour chaque rôle à accomplir dans leur fonction professionnelle",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -615,8 +615,8 @@
 		"procedure_meta":"8_1_a",
 		"procedure_verdict":"N/T",
 		"procedure_label":"Examiner les procédures et confirmer qu’elles définissent les processus pour chacun des éléments ci-dessous de 8.1.1 à 8.1.8",
-		"procedure_is_testable":false,
-		"procedure_is_child":false,
+		"procedure_is_testable":"false",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
@@ -632,8 +632,8 @@
 		"procedure_meta":"8_1_b",
 		"procedure_verdict":"N/T",
 		"procedure_label":"Vérifier que les procédures sont mises en œuvre pour la gestion de l’identification des utilisateurs, en accomplissant ce qui suit :",
-		"procedure_is_testable":false,
-		"procedure_is_child":false,
+		"procedure_is_testable":"false",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
@@ -649,14 +649,14 @@
 		"procedure_meta":"8_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Interroger le personnel administratif pour confirmer que tous les utilisateurs ont un ID unique pour accéder aux composants de système ou aux données de titulaires de carte.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"8",
@@ -667,14 +667,14 @@
 		"procedure_meta":"8_1_2_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Pour un échantillon d’ID d’utilisateur privilégiés et d’ID d’utilisateur génériques, examiner les autorisations associées et observer les réglages de système pour vérifier que chaque ID utilisateur et chaque ID utilisateur privilégié a été mise en œuvre avec seulement les privilèges spécifiés sur l’approbation documentée.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"8",
@@ -685,14 +685,14 @@
 		"procedure_meta":"8_3_a",
 		"procedure_verdict":"N/T",
 		"procedure_label":"Pour un échantillon d’ID d’utilisateur privilégiés et d’ID d’utilisateur génériques, examiner les autorisations associées et observer les réglages de système pour vérifier que chaque ID utilisateur et chaque ID utilisateur privilégié a été mise en œuvre avec seulement les privilèges spécifiés sur l’approbation documentée.",
-		"procedure_is_testable":false,
-		"procedure_is_child":false,
+		"procedure_is_testable":"false",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_blue",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	{
 		"parent_condition_id":"8",
@@ -703,14 +703,14 @@
 		"procedure_meta":"8_5_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Pour un échantillon de composants de système, examiner les listes d’ID d’utilisateur pour vérifier les points suivants :\nLes ID d’utilisateur génériques sont désactivés ou supprimés.\nIl n’existe pas d’ID d’utilisateur partagé pour les activités d’administration du système et d’autres fonctions stratégiques.\nAucun ID d’utilisateur partagé ou générique n’est utilisé pour l’administration du moindre composant du système.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":true
+		"condition_is_needed_solutions":"true"
 	},
 	
 	{
@@ -722,14 +722,14 @@
 		"procedure_meta":"9_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que des contrôles de sécurité physiques sont en place dans chaque salle informatique, centre de données et autres zones physiques qui abritent des systèmes appartenant à l’environnement des données de titulaires de carte.\nVérifier que l’accès est contrôlé par des lecteurs de badge et autres dispositifs tels que des badges autorisés, des clés et des cadenas.\nObserver un administrateur système alors qu’il tente de se connecter aux consoles de systèmes choisis de façon aléatoire dans l’environnement des données de titulaires de carte, et vérifier que ces consoles sont « verrouillées » pour empêcher toute utilisation non autorisée.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"9",
@@ -740,14 +740,14 @@
 		"procedure_meta":"9_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que des caméras vidéo ou des mécanismes de contrôle d’accès (ou les deux) sont en place pour contrôler les points d’entrée/de sortie dans les zones sensibles.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"9",
@@ -758,14 +758,14 @@
 		"procedure_meta":"9_1_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que les caméras vidéo ou les mécanismes de contrôle d’accès (ou les deux) sont protégés contre la falsification ou la désactivation.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"9",
@@ -776,14 +776,14 @@
 		"procedure_meta":"9_1_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que les données des caméras vidéo et/ou autres mécanismes de contrôle d’accès sont examinées, et que les données sont conservées pendant au moins trois mois.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -795,14 +795,14 @@
 		"procedure_meta":"10_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier, par l’observation et en interrogeant l’administrateur du système, que :\nLes cheminements d’audit sont activés et actifs pour les composants de système.\nL’accès aux composants de système est relié aux utilisateurs individuels.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"10",
@@ -813,8 +813,8 @@
 		"procedure_meta":"10_2_a",
 		"procedure_verdict":"N/T",
 		"procedure_label":"En interrogeant le personnel responsable, en observant les journaux d’audit et les paramètres de ces journaux d’audit, prendre les mesures décrites ci-après :",
-		"procedure_is_testable":false,
-		"procedure_is_child":false,
+		"procedure_is_testable":"false",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
@@ -830,14 +830,14 @@
 		"procedure_meta":"10_2_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que tous les accès des utilisateurs aux données de titulaires de carte sont consignés.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"10",
@@ -848,14 +848,14 @@
 		"procedure_meta":"10_2_2_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que toutes les actions exécutées par tout utilisateur avec des droits racine ou administrateur sont consignées.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -867,14 +867,14 @@
 		"procedure_meta":"11_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Examiner les politiques et les procédures pour vérifier que des processus sont définis pour la détection et l’identification des points d’accès sans-fil autorisés et non autorisés sur une base trimestrielle.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"11",
@@ -885,14 +885,14 @@
 		"procedure_meta":"11_1_b",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que la méthodologie est appropriée et qu’elle permet de détecter et d’identifier tout point d’accès sans-fil non autorisé, notamment au moins ce qui suit :\nCartes WLAN insérées dans les composants de système ;\nAppareils portables ou mobiles reliés à un composant du système pour créer un point d’accès sans-fil (par exemple, par USB, etc.) ;\nDes périphériques sans-fil branchés sur un port réseau ou à un périphérique réseau.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"11",
@@ -903,14 +903,14 @@
 		"procedure_meta":"11_1_c",
 		"procedure_verdict":"Non",
 		"procedure_label":"Si la technologie sans fil est utilisée, examiner le résultat des scans de réseau sans fil récents pour vérifier que :\nLes points d’accès autorisés et non autorisés sont identifiés ; et\nLe scan est effectué au moins une fois par trimestre pour tous les composants et toutes les installations du système.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"11",
@@ -921,14 +921,14 @@
 		"procedure_meta":"11_1_d",
 		"procedure_verdict":"Non",
 		"procedure_label":"Si l’on utilise une surveillance automatisée (par exemple systèmes de détection et/ou de prévention d’intrusions sans-fil, NAC, etc.), vérifier que la configuration déclenchera des alertes pour informer le personnel.",
-		"procedure_is_testable":true,
-		"procedure_is_child":true,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"true",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	
 	{
@@ -940,14 +940,14 @@
 		"procedure_meta":"12_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Passer en revue la politique de sécurité des informations et vérifier qu’elle est publiée et diffusée à tout le personnel concerné (mais aussi aux fournisseurs et partenaires commerciaux).",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	},
 	{
 		"parent_condition_id":"12",
@@ -958,13 +958,13 @@
 		"procedure_meta":"12_1_1_a",
 		"procedure_verdict":"Non",
 		"procedure_label":"Vérifier que la politique de sécurité des informations est passée en revue au moins une fois par an et mise à jour le cas échéant, pour tenir compte des modifications apportées aux objectifs de l’entreprise ou à l’environnement de risque.",
-		"procedure_is_testable":true,
-		"procedure_is_child":false,
+		"procedure_is_testable":"true",
+		"procedure_is_child":"false",
 		"procedure_comments":"",
 		"associated_site":"",
 		"doc_state":"Non",
 		"site_state":"Non",
 		"color_cell_stripe":"cell_stripe_red",
-		"condition_is_needed_solutions":false
+		"condition_is_needed_solutions":"false"
 	}
 ]

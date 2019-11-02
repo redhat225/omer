@@ -13,8 +13,14 @@ html {
 .eben-orange-b {
   background: #0E0E0E !important; }
 
+.eben-orange-b {
+  background: #0E0E0E !important; }
+
 .eben-grey {
   color: #ccc !important; }
+
+.eben-grey-b {
+  background: #ccc !important; }
 
 .eben-grey-b {
   background: #ccc !important; }
@@ -37,6 +43,9 @@ html {
 .eben-black-b {
   background: #0E0E0E !important; }
 
+.eben-black-b {
+  background: #0E0E0E !important; }
+
 .eben-salmon {
   color: #d24040 !important; }
 
@@ -48,6 +57,24 @@ html {
 
 .eben-salmon-b {
   background: #d24040 !important; }
+
+.eben-salmon-b {
+  background: #d24040 !important; }
+
+.eben-light-grey {
+  color: #cccccc8a !important; }
+
+.eben-light-grey-b {
+  background: #cccccc8a !important; }
+
+.eben-light-grey-b {
+  background: #cccccc8a !important; }
+
+.eben-light-grey-b {
+  background: #cccccc8a !important; }
+
+.eben-light-grey-b {
+  background: #cccccc8a !important; }
 
 .is-mar-lft-0 {
   margin-left: 0px !important; }
@@ -28683,3 +28710,5 @@ li.item_bar_report.is-active a {
   background-color: !important;
   color: #fff !important;
   border-color: !important; }
+
+/*# sourceMappingURL=main.css.map */

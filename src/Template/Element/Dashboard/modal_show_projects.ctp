@@ -16,7 +16,7 @@
 	}
 </style>
 
-<div class="modal {{showInfoProjectModal}}" id="show_workflow_modal">
+<div class="modal {{showInfoProjectModal}}" id="show_workflow_modal" ng-if="current_selected_project">
   <div class="modal-background" ng-click="closeInfoModal()"></div>
   <div class="modal-card" style="width:80%;">
     <header class="modal-card-head is-none-radius eben-black-b">

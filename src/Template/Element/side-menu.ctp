@@ -71,7 +71,12 @@
 		       	  <i class="fa fa-user"></i>
 		       </span>Profil</a>
 		    </li>
-
+		    <li>
+		       <a ng-init="sensialert=''" ng-click="sensialert='is-active'" href="#!"  class="has-text-black has-text-weight-semibold is-radiusless">
+		       	<span class="icon is-pad-rgt-15">
+		       	  <i class=" fa fa-bell"></i>
+		       </span>Sensialert</a>
+		    </li>
 		    <li class="side-element">
 		       <a href="/admins/logout" target="_self" class="has-text-black has-text-weight-semibold is-radiusless">
 		       	<span class="icon is-pad-rgt-15">
@@ -86,6 +91,20 @@
 			  <img src="/img/assets/chartkit/signature.png" alt="" style="width: 125px">
 	</div>
 </section>
+
+<div class="modal {{sensialert}}">
+  <div class="modal-background" ng-click="sensialert=''"></div>
+  <div class="modal-content box is-radiusless">
+  	<figure class="image is-128x128 is-centered">
+	  <img ng-src="/img/assets/sensialert.png">
+	</figure>
+	<br>
+	<p class="has-text-centered">
+		SensiAlert est une solution permettant de diffuser de l'information de sensibilisation aux risques sécurité via des notifications bureau online et offline.
+	</p>
+  </div>
+  <button class="modal-close is-large" aria-label="close" ng-click="sensialert=''"></button>
+</div>
 
 
 <script>

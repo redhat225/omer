@@ -88,7 +88,7 @@
 						</div>
 						<div class="column is-three-fifths">
 							<canvas id="audit_radar" class="chart chart-radar"
-							  chart-data="data_audit_radar" chart-dataset-override="overrides_audit_radar" chart-options="options_audit_radar" chart-labels="data_audit_labels" chart-colors="audit_radar_colors">
+							  chart-data="data_audit_radar" chart-options="options_audit_radar" chart-labels="data_audit_labels" chart-colors="audit_radar_colors">
 							</canvas>
 						</div>
 	</div>

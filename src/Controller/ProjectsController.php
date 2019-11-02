@@ -92,6 +92,39 @@ class  ProjectsController extends AppController
               }
     }
 
+    public function refresh(){
+              if($this->request->is('ajax')){
+                  if($this->request->is('post')){
+                      $data = $this->request->data['project'];
+                      foreach ($data['project_meta']['pcidssv321'] as $key => $value) {
+                        $uploads = [];
+                        if(isset($value['assets']) && (!empty($value['assets']))){
+                          foreach ($value['assets'] as $k => $v){
+                              $temp_upload = [
+                                  'asset' => Text::uuid().'.'.end((explode('.',$v['name']))),
+                              ];
+                              array_push($uploads,$temp_upload);
+                              if(!move_uploaded_file($v['tmp_name'], WWW_ROOT.'img/deliverables/'.$temp_upload['asset']))
+                              return false;
+                          }
+                          $data['project_meta']['pcidssv321'][$key]['downloaded_assets'] = $uploads;
+                          unset($data['project_meta']['pcidssv321'][$key]['assets']);
+                        }
+                      }
+                      $project = $this->Projects->get($data['id']);
+                      $project->project_meta = json_encode($data['project_meta']);
+                      if($this->Projects->save($project)){
+                          $response = ['message'=>'ok'];
+                          $this->RequestHandler->renderAs($this, 'json');
+                          $this->set(compact('response'));
+                          $this->set('_serialize',['response']);
+                      }else
+                       throw new Exception\BadRequestException(__('errors save object'));
+                  }
+              }
+    }
+
+
     public function edit(){
               if($this->request->is('ajax')){
                   if($this->request->is('post')){

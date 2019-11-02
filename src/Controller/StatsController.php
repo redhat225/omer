@@ -55,7 +55,6 @@ class StatsController extends AppController
                     $data = $this->request->data;
                     if((isset($data['start_date'])) && (isset($data['end_date']))){
                         try{
-
                             $start = new \DateTime($data['start_date']);
                             $end = new \DateTime($data['end_date']);
                             if($start<$end){
@@ -88,18 +87,17 @@ class StatsController extends AppController
                                 ->where(function($exp,$q) use($formatted_start,$formatted_end){
                                     return $exp->between('Projects.created',$formatted_start,$formatted_end);
                                 })->order(['created'=>'desc']);
-
                                 // project carriers stats
-                                $project_carriers_stats = [];
-                                foreach ($cache_content->projects->carriers as $carrier) {
-                                    $carrier_stat = [
-                                        'carrier' => $carrier,
-                                        'project_followed' => 0,
-                                        'risk_before'=> 0,
-                                        'risk_actual'=> 0
-                                    ];
-                                    array_push($project_carriers_stats,$carrier_stat);
-                                };
+                                // $project_carriers_stats = [];
+                                // foreach ($cache_content->projects->carriers as $carrier) {
+                                //     $carrier_stat = [
+                                //         'carrier' => $carrier,
+                                //         'project_followed' => 0,
+                                //         'risk_before'=> 0,
+                                //         'risk_actual'=> 0
+                                //     ];
+                                //     array_push($project_carriers_stats,$carrier_stat);
+                                // };
 
                                 // projects vulnerabilities encountered
                                 $project_vulnerabilities_glossary = [];
@@ -160,23 +158,23 @@ class StatsController extends AppController
                                                 }
                                         }
 
-                                    // flush carriers stats
-                                    foreach ($project_carriers_stats as $k => $v){
-                                        if($context_project_meta->project_carrier === $v['carrier']){
-                                             $project_carriers_stats[$k]['project_followed']++;
-                                             // risk before
-                                             $risk_before_meta = json_decode($project->project_vulnerabilities[0]->vulnerability_content);
-                                             foreach($risk_before_meta as $risk){
-                                                $project_carriers_stats[$k]['risk_before']++;
-                                             }
-                                             // risk after
-                                             $temp_risk_after = end($project->project_vulnerabilities);
-                                             $risk_after_meta = json_decode($temp_risk_after->vulnerability_content);
-                                             foreach($risk_after_meta as $risk){
-                                                $project_carriers_stats[$k]['risk_actual']++;
-                                             }
-                                        }
-                                    }
+                                    // // flush carriers stats
+                                    // foreach ($project_carriers_stats as $k => $v){
+                                    //     if($context_project_meta->project_carrier === $v['carrier']){
+                                    //          $project_carriers_stats[$k]['project_followed']++;
+                                    //          // risk before
+                                    //          $risk_before_meta = json_decode($project->project_vulnerabilities[0]->vulnerability_content);
+                                    //          foreach($risk_before_meta as $risk){
+                                    //             $project_carriers_stats[$k]['risk_before']++;
+                                    //          }
+                                    //          // risk after
+                                    //          $temp_risk_after = end($project->project_vulnerabilities);
+                                    //          $risk_after_meta = json_decode($temp_risk_after->vulnerability_content);
+                                    //          foreach($risk_after_meta as $risk){
+                                    //             $project_carriers_stats[$k]['risk_actual']++;
+                                    //          }
+                                    //     }
+                                    // }
                                     
 
                                     if(count($report_stats["report_ver_dates"])>0){
@@ -227,62 +225,58 @@ class StatsController extends AppController
                                                     }
                                                 }
 
-                                    foreach($project_vulnerabilities_types_glossary as $k=>$v){
-                                                    $project_vulnerabilities_types_glossary[$k]['vulns'] = $this->sortArray($project_vulnerabilities_types_glossary[$k]['vulns'],'encountered');
-                                    }
+                                    // foreach($project_vulnerabilities_types_glossary as $k=>$v){
+                                    //                 $project_vulnerabilities_types_glossary[$k]['vulns'] = $this->sortArray($project_vulnerabilities_types_glossary[$k]['vulns'],'encountered');
+                                    // }
 
-                                // stats spocs secByDesign
-                                $spocs = [];
-                                foreach ($cache_content->projects->spocs as $value) {
-                                    $spoc = [
-                                        'auditor' => $value,
-                                        'project_followed' => 0,
-                                        'projects' => [],
-                                        'project_carriers'=>[]
-                                    ];
-                                    foreach($cache_content->projects->carriers as $carrier){
-                                        $spoc_carrier = [$carrier=>0];
-                                        $spoc['project_carriers'][$carrier] = 0;
-                                    }
-                                    array_push($spocs,$spoc);
-                                };
+                                // // stats spocs secByDesign
+                                // $spocs = [];
+                                // foreach ($cache_content->projects->spocs as $value) {
+                                //     $spoc = [
+                                //         'auditor' => $value,
+                                //         'project_followed' => 0,
+                                //         'projects' => [],
+                                //         'project_carriers'=>[]
+                                //     ];
+                                //     array_push($spocs,$spoc);
+                                // };
 
 
-                                $spoc_projects = $this->Projects->find()->where(function($exp,$q) use($formatted_start,$formatted_end){
-                                    return $exp->between('Projects.created',$formatted_start,$formatted_end);
-                                })->order(['created'=>'desc']);
+                                // $spoc_projects = $this->Projects->find()->where(function($exp,$q) use($formatted_start,$formatted_end){
+                                //     return $exp->between('Projects.created',$formatted_start,$formatted_end);
+                                // })->order(['created'=>'desc']);
 
-                                //spocs stats
-                                foreach($spocs as $key => $value){
-                                    foreach ($spoc_projects as $project){
-                                        $meta = json_decode($project->project_meta);
-                                        foreach ($meta->contributors as $contributor){
-                                            if($contributor->fullname == $spocs[$key]['auditor']){
-                                                $spocs[$key]['project_followed']++;
-                                                $s_project = [
-                                                    'fullname' => $project->project_name,
-                                                    'programme' => $meta->progam,
-                                                    'priority' => $meta->project_priority,
-                                                    'project_governance_type' =>$meta->project_governance_type,
-                                                    'created' =>  $project->created,
-                                                    'carrier' => $meta->project_carrier
-                                                ];
-                                                $spocs[$key]['project_carriers'][$meta->project_carrier]++;
-                                                array_push($spocs[$key]['projects'],$s_project);
-                                            }
-                                        }
-                                    }
-                                }
+                                // //spocs stats
+                                // foreach($spocs as $key => $value){
+                                //     foreach ($spoc_projects as $project){
+                                //         $meta = json_decode($project->project_meta);
+                                //         foreach ($meta->contributors as $contributor){
+                                //             if($contributor->fullname == $spocs[$key]['auditor']){
+                                //                 $spocs[$key]['project_followed']++;
+                                //                 $s_project = [
+                                //                     'fullname' => $project->project_name,
+                                //                     'programme' => $meta->progam,
+                                //                     'priority' => $meta->project_priority,
+                                //                     'project_governance_type' =>$meta->project_governance_type,
+                                //                     'created' =>  $project->created,
+                                //                     'carrier' => $meta->project_carrier
+                                //                 ];
+                                //                 $spocs[$key]['project_carriers'][$meta->project_carrier]++;
+                                //                 array_push($spocs[$key]['projects'],$s_project);
+                                //             }
+                                //         }
+                                //     }
+                                // }
 
-                                // flush total risk before-after
-                                $project_carriers_stats_total = [
-                                    'total_risk_before' => 0,
-                                    'total_risk_actual' => 0
-                                ];
-                                foreach($project_carriers_stats as $carrier){
-                                    $project_carriers_stats_total["total_risk_actual"]+=$carrier['risk_actual'];
-                                    $project_carriers_stats_total["total_risk_before"]+=$carrier['risk_before'];
-                                }
+                                // // flush total risk before-after
+                                // $project_carriers_stats_total = [
+                                //     'total_risk_before' => 0,
+                                //     'total_risk_actual' => 0
+                                // ];
+                                // foreach($project_carriers_stats as $carrier){
+                                //     $project_carriers_stats_total["total_risk_actual"]+=$carrier['risk_actual'];
+                                //     $project_carriers_stats_total["total_risk_before"]+=$carrier['risk_before'];
+                                // }
 
                                 $whole_stats = [
                                     "projects" => $projects,
@@ -290,10 +284,10 @@ class StatsController extends AppController
                                     "project_counts" => $projects_count,
                                     "project_status" => $projects_status,
                                     "projects_audit_count" => $projects_audit_count,
-                                    "spocs" => $spocs,
-                                    "project_carriers" => $cache_content->projects->carriers,
-                                    "project_carriers_stats" => $project_carriers_stats,
-                                    "project_carriers_stats_total" => $project_carriers_stats_total,
+                                    // "spocs" => $spocs,
+                                    // "project_carriers" => $cache_content->projects->carriers,
+                                    // "project_carriers_stats" => $project_carriers_stats,
+                                    // "project_carriers_stats_total" => $project_carriers_stats_total,
                                     'vulns_carto' => $project_vulnerabilities_types_glossary
                                 ];
 

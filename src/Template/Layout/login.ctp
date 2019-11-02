@@ -35,7 +35,7 @@ $pageDescription = 'DATAPROTECT-Security Project';
     
     <?= $this->fetch('script') ?>
 </head>
-<body ng-app="login" ng-controller="MainCtrl as mainctrl">
+<body ng-app="login" ng-controller="MainCtrl as mainctrl" style="background: black;">
     <?= $this->fetch('content') ?>
     <!-- Load angular app here -->
 <script

@@ -1,18 +1,10 @@
-<h1 class="title is-pad-top-20">
+<h1 class="title">
 	Salut <span ng-bind="profile.username"></span>
 </h1>
 <h2 class="subtitle is-6 has-text-grey">Bienvenue sur votre tableau de bord</h2>
 <section>
-	<div class="level">
-		<div class="level-left">
-			<div class="level-item">
-				<span class="icon">
-					<i class="fab fa-2x fa-dyalog"></i>
-				</span>
-				<span class="has-text-intercoton-green has-text-weight-semibold is-pad-lft-20 is-ft-sz-20">Dashboard KPI Tests Intrusions</span> 	
-			</div>
-		</div>
-		<div class="level-right">
+	<div class="level" style='background: url("/img/assets/stats.png") no-repeat 100% 23%;'>
+		<div class="level-left box is-radiusless">
 			<div class="level-item">
 				<form ng-submit="load_kpis(interval_date)" name="stat_form">
 					<div class="field is-horizontal">
@@ -61,7 +53,11 @@
 							</div>
 						</div>
 					</div>
-				</form>	
+				</form>		
+			</div>
+		</div>
+		<div class="level-right">
+			<div class="level-item">
 			</div>
 			<div>
 										
@@ -70,10 +66,9 @@
 		</div>
 	</div>
 
-		<div class="tile is-ancestor">
-			<div class="tile is-parent">
-				<div class="tile is-child box hero">
-					<canvas id="radar" class="chart chart-radar" chart-data="data"
+	<div class="columns is-pad-lft-10 is-pad-rgt-10">
+		<div class="column is-9 box hero is-none-radius is-pad-top-0 is-pad-rgt-0 is-pad-lft-0 is-pad-bot-0 ">
+					<canvas id="radar" class="chart chart-radar" chart-data="radar_datas"
 					  chart-dataset-override="overrides_radar" chart-options="options" chart-labels="labels" chart-colors="colors_dashboard">
 					</canvas> 
 					  <div class="level">
@@ -88,10 +83,140 @@
 					  		</div>
 					  	</div>
 					  </div>
-					<div id="tooltip" style="position: absolute;"></div>
+		</div>
+		<div class="column is-3 is-pad-top-0">
+					<table class="table is-fullwidth is-striped">
+					  <thead>
+					    <tr class="eben-orange-b">
+					      <th class="has-text-white has-text-weight-semibold">#</th>
+					      <th class="has-text-white has-text-weight-semibold">&nbsp;</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<tr ng-repeat="customer in customers">
+					  		<td class="has-text-weight-semibold">
+								<figure class="image is-96x96">
+								  <img ng-src="/img/assets/customers/logos/{{customer.logo}}">
+								</figure>
+					  		</td>
+					  		<td class="has-text-weight-semibold is-uppercase">{{customer.name}} <br> {{customer.city}} - {{customer.country}} <br> {{customer.full_contact}}</td>
+					  	</tr>
+					  </tbody>
+					</table>
+		</div>
+	</div>
+	<div class="columns is-pad-lft-10 is-pad-rgt-10">
+		<div class="column box is-pad-lft-0 is-pad-rgt-0 is-radiusless">
+							<table class="table is-fullwidth is-striped">
+								<thead>
+									<tr>
+										<th>&nbsp;</th>
+									      <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 1</abbr></th>
+										  <th><abbr title="Ne pas utiliser les mots de passe système et autres paramètres de sécurité par défaut définis par le fournisseur">Ex 2</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 3</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 4</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 5</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 6</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 7</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 8</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 9</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 10</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 11</abbr></th>
+										  <th><abbr title="Installer et gérer une configuration de pare-feu pour protéger les données des titulaires de cartes">Ex 12</abbr></th>
+										 <th>Global</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Conformité (%)</td>
+										<td class="has-text-weight-semibold" ng-repeat="key in stats_report_audit_context.conformity">
+											{{key.ex}} %
+										</td>
+										<td>
+											{{stats_report_audit_context.global_conformity}}
+										</td>
+									</tr>
+									<tr>
+										<td>En place</td>
+										<td class="has-text-weight-semibold"  ng-repeat="key in stats_report_audit_context.in_place">
+											{{key.ex}}
+										</td>
+										<td>
+											{{stats_report_audit_context.global_in_place}}
+										</td>
+									</tr>
+									<tr>
+										<td>Pas en place</td>
+										<td  class="has-text-weight-semibold" ng-repeat="key in stats_report_audit_context.not_in_place">
+											{{key.ex}}
+										</td>
+										<td>
+											{{stats_report_audit_context.global_not_inplace}}
+										</td>
+									</tr>
+									<tr>
+										<td>N/A</td>
+										<td class="has-text-weight-semibold" ng-repeat="key in stats_report_audit_context.not_applicable">
+											{{key.ex}}
+										</td>
+										<td>
+											{{stats_report_audit_context.global_not_applicable}}
+										</td>
+									</tr>
+									<tr>
+										<td>Total</td>
+										<td class="has-text-weight-semibold" ng-repeat="key in stats_report_audit_context.total">
+											{{key.ex}}
+										</td>
+										<td>
+											{{stats_report_audit_context.global_total}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+		</div>
+	</div>
+
+		<div class="tile is-ancestor">
+			<div class="tile is-parent">
+				<div class="tile is-child box hero is-gamecenter-pink is-none-radius is-pad-top-0 is-pad-rgt-0 is-pad-lft-0 is-pad-bot-0 ">
+					<div class="media">
+						<div class="media-left">
+							<span class="icon">
+								<i class="fas fa-retweet is-medium"></i>
+							</span>
+							 <span class=""></span>
+						</div>
+						<div class="media-content">
+							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Evolution des Risques</p>
+								<canvas id="line" class="chart chart-line" chart-data="data_risk_evoled"
+								chart-labels="labels_risk_evolved" chart-series="series_list_evolved">
+								</canvas>								
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<div class="tile is-parent">
+				<div class="tile is-child box hero is-gamecenter-pink is-none-radius is-pad-top-0 is-pad-rgt-0 is-pad-lft-0 is-pad-bot-0 ">
+					<div class="media">
+						<div class="media-left">
+							<span class="icon">
+								<i class="fas fa-retweet is-medium"></i>
+							</span>
+							 <span class=""></span>
+						</div>
+						<div class="media-content">
+							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Evolution des Risques</p>
+							  <canvas class="chart chart-bar"
+								  chart-data="data_bar_risk_evolved_labels_datas" chart-labels="data_bar_risk_evolved_labels" chart-series="data_bar_risk_evolved_series"> 
+							</canvas> 
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+
 		<!-- Followed projects stats -->
 		<div class="tile is-ancestor">
 			<div class="tile is-parent">
@@ -105,7 +230,6 @@
 						</div>
 						<div class="media-content">
 							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Suivi Projet</p>
-							
 							<span class="is-pulled-left">Projets Suivis </span>  <span class="is-pulled-right is-pad-rgt-20 has-text-weight-semibold">{{global_kpis.project_counts}}</span><br>
 							
 							<span class="is-pulled-left">Projets en cours d'audit </span> <span class="is-pulled-right is-pad-rgt-20 has-text-weight-semibold">{{global_kpis.projects_audit_count}}</span> <br>
@@ -114,33 +238,30 @@
 	
 							<span class="is-pulled-left">Projets Clotûré </span> <span class="is-pulled-right is-pad-rgt-20 has-text-weight-semibold">{{global_kpis.project_status["Clotûrés"]}}</span> <br>
 
-							<span class="is-pulled-left">Projets Etude </span> <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status.Etude}}</span> <br>
+							<span class="is-pulled-left">Audit Initial</span> <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status.Etude}}</span> <br>
 							
-							<span class="is-pulled-left">Projets En Execution </span>
+							<span class="is-pulled-left">Audit Observation</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">
 						   	{{global_kpis.project_status.Execution}}
 						   </span> 
 						    
 						    <br>
 							
-							<span class="is-pulled-left">Projets En Production </span>
+							<span class="is-pulled-left">Aide à la remédiation</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">	{{global_kpis.project_status.Production}}</span> 
 							
 							<br>
-							<span class="is-pulled-left">Projets En Tests </span>
+							<span class="is-pulled-left">Audit de surveillance</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status.Tests}}</span> 
 							
 								<br>
-							<span class="is-pulled-left">Projets Fin des tests </span>
+							<span class="is-pulled-left">Clotûré</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status["Fin des tests"]}}</span> 
 								<br>
-							<span class="is-pulled-left">Projets Non démarré </span>
+							<span class="is-pulled-left">Suspendu</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status["Non démarré"]}}</span> 
 								<br>
-							<span class="is-pulled-left">Projets Suspendus </span>
-						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status.Suspendu}}</span> 
-								<br>
-							<span class="is-pulled-left">Projets Annulé </span>
+							<span class="is-pulled-left">Annulé</span>
 						   <span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_status["Annulé"]}}</span> 
 						</div>
 					</div>
@@ -164,7 +285,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>c
      </div>
 
 <div class="columns">
@@ -172,7 +293,7 @@
      			<div class="filter_area">
 					<div class="field has-addons is-expanded">
 						<div class="control is-expanded">
-							<input type="text" class="input" ng-model="filter_keys" style="height:36px !important;">
+							<input type="text" class="input" ng-model="filter_keys">
 						</div>
 						<div class="control">
 							<a class="button is-intercoton-green is-eben">
@@ -190,11 +311,11 @@
 								<tr class="eben-orange-b">
 									<th class="has-text-white">#</th>
 									<th class="has-text-white">Projet</th>
-									<th class="has-text-white">Porteur</th>
-									<th class="has-text-white">Priorité</th>
+									<th class="has-text-white">BU</th>
+									<th class="has-text-white">Périmètre</th>
 									<th class="has-text-white">Status</th>
-									<th class="has-text-white">Spoc SBD</th>
-									<th class="has-text-white">Période Audit</th>
+									<th class="has-text-white">Client</th>
+									<th class="has-text-white">Derniers tests intrusions</th>
 									<th class="has-text-white">Période Vérifications</th>
 									<th class="has-text-white">Délais de correction</th>
 									<th class="has-text-white">Nbre de vérifications</th>
@@ -204,16 +325,16 @@
 								</tr>
 							</thead>
 							<tbody >
-								<tr ng-repeat="project in global_kpis.projects | filter:filter_keys" ng-class="set_state_project_row(project.project_is_closed)" class="">
+								<tr ng-if="global_kpis.projects" ng-repeat="project in global_kpis.projects | filter:filter_keys" ng-class="set_state_project_row(project.project_is_closed)" class="">
 									<td>
 									  {{$index+1}}
 									</td>
 									<td class="is-uppercase has-text-weight-semibold">{{project.project_name}}</td>
-									<td>{{project.project_meta.project_carrier}}</td>
-									<td>{{project.project_meta.project_priority}}</td>
+									<td>{{project.project_meta.project_bu.name}}</td>
+									<td>{{project.project_meta.project_bu_perimeter}}</td>
 									<td ng-if="project.project_is_closed == false" class="has-text-weight-semibold">{{project.project_accompaniments[0].accompaniments_meta.status}}</td>
 									<td ng-if="project.project_is_closed == true" class="has-text-weight-semibold">Clotûré</td>
-									<td class="has-text-weight-semibold">{{project.spoc}}</td>
+									<td class="has-text-weight-semibold">{{project.project_meta.project_customer.name}}</td>
 									<td>
 										{{project.report_stats.report_dates.begin_date | date:'dd/MM/yyyy' }} - {{project.report_stats.report_dates.end_date | date:'dd/MM/yyyy' }}
 									</td>
@@ -254,14 +375,14 @@
 							 <span class=""></span>
 						</div>
 						<div class="media-content">
-							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">SPOC SecByDesign - Projets suivis</p>
+							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Ressources - Projets suivis</p>
 
 							<span class="is-pulled-left">Projets suivis</span>
-							<span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">{{global_kpis.project_counts}}</span>
+							<span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">61</span>
 							 <br>
 							<div class="is-divider" data-content="vue simple"></div>				
 
-							<div ng-repeat="spoc in global_kpis.spocs">
+							<div ng-repeat="spoc in spocs">
 							    <span class="is-pulled-left">{{spoc.auditor}}</span>
 								<span class="is-pulled-right has-text-weight-semibold is-pad-rgt-20">
 									{{spoc.project_followed}}
@@ -289,9 +410,9 @@
 							 <span class=""></span>
 						</div>
 						<div class="media-content">
-							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Occupation SPOC SecByDesign</p>
+							<p class="is-size-5 has-text-weight-semibold has-text-intercoton-green">Charge de travail</p>
 							<canvas width="100%" height="100%" id="radar" class="chart chart-radar"
-							  chart-series="data_series_radar" chart-colors="detail_followed_project_colors" chart-data="data_radar" chart-options="radar_spoc_chart_options" chart-labels="labels_radar">
+							   chart-colors="detail_followed_project_colors" chart-data="data_radar_charge" chart-options="radar_spoc_chart_options_charge" chart-labels="labels_radar_charge" chart-dataset-override="overrides_radar_charge">
 							</canvas> 
 						</div>
 					</div>
@@ -299,67 +420,7 @@
 			</div>
      </div>
 
-
-
-
-		<!-- Today Stats Preview - Observator & system -->
-		<div class="tile is-ancestor">
-			<div class="tile is-parent">
-				<div class="tile is-pad-top-0 is-pad-bot-0 is-pad-lft-0 is-pad-rgt-0 is-child box hero is-none-radius is-transparent is-shadowless">
-						<h2 class="has-text-grey mcen-lightgrey-b has-text-weight-semibold">Répartition risque/porteurs</h2>
-					<table class="table is-fullwidth is-striped">
-					  <thead>
-					    <tr class="eben-orange-b">
-					      <th class="has-text-white has-text-weight-semibold">#</th>
-					      <th class="has-text-white has-text-weight-semibold">Porteur</th>
-					      <th class="has-text-white has-text-weight-semibold">Nbre Projets suivis</th>
-					      <th class="has-text-white has-text-weight-semibold">Risque Avant</th>
-					      <th class="has-text-white has-text-weight-semibold">Risque Actuel</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					  	<tr ng-repeat="carrier_stat in global_kpis.project_carriers_stats" ng-class="get_row_bg($index)">
-					  		<td class="has-text-weight-semibold">{{$index+1}}</td>
-					  		<td class="has-text-weight-semibold">{{carrier_stat.carrier}}</td>
-					  		<td class="has-text-weight-semibold">{{carrier_stat.project_followed}}</td>
-					  		<td class="has-text-weight-semibold">{{carrier_stat.risk_before}}</td>
-					  		<td class="has-text-weight-semibold">{{carrier_stat.risk_actual}}</td>
-					  	</tr>
-					  </tbody>
-					  <tfoot>
-					  	<td colspan="3">Total</td>
-					  	<td class="has-text-weight-semibold">{{global_kpis.project_carriers_stats_total.total_risk_before}}</td>
-					  	<td class="has-text-weight-semibold">{{global_kpis.project_carriers_stats_total.total_risk_actual}}</td>
-					  </tfoot>
-					</table>
-				</div>
-			</div>
-	     </div>
-
-		<div class="tile is-ancestor">
-			<div class="tile is-parent">
-							<canvas id="line" class="chart chart-line" chart-data="data_repartition_lines"
-							chart-labels="lines_risk_repartition_labels" chart-series="lines_risk_repartition_series" chart-options="lines_risk_repartition_options" chart-colors="lines_repartition_colors">
-							</canvas>
-			</div>
-
-				<div class="tile is-parent is-shadowless is-none-border">
-					<div class="is-pad-top-0 is-pad-bot-0 is-pad-lft-0 is-pad-rgt-0 tile is-child box hero is-transparent is-none-radius is-shadowless is-none-border">
-							<h2 class="has-text-grey mcen-lightgrey-b has-text-weight-semibold">Répartition risque</h2>
-
-							<canvas chart-colors="risk_repartition_colors" chart-options="risk_repartition_chart_options" id="base" class="chart-horizontal-bar" chart-data="risk_repartition_data" chart-labels="risk_repartition_labels">
-							</canvas> 
-							<!-- total_risk_actual -->
-							<!-- total_risk_before -->
-					</div>
-				</div>
-	     </div>
-
-
-
-
-
-		<div class="tile is-ancestor">
+	<div class="tile is-ancestor">
 			<div class="tile is-parent">
 				<div class="tile is-pad-top-0 is-pad-bot-0 is-pad-lft-0 is-pad-rgt-0 is-child box hero is-none-radius is-transparent is-shadowless">
 					<h2 class="has-text-grey mcen-lightgrey-b has-text-weight-semibold">Top Vulnerabilités/Surfaces</h2>
@@ -394,11 +455,27 @@
 				</div>
 			</div>
      </div>
-<?= $this->element('Dashboard/modal_show_projects') ?>
-
+     	<?= $this->element('Dashboard/modal_show_details') ?>
 <!-- SMP Dashboard  -->
 <!-- SMP Radar info -->
 <?= $this->element('Dashboard/SMP/info-radar') ?>
+
+
+<div class="pageloader is-left-to-right {{is_loading}}" style="background:#d24040 url('/img/assets/image/minion_loading_stats.png') no-repeat 100% 100%;">
+		<nav class="navbar is-pad-top-0 is-mar-top-0 is-transparent" role="navigation" aria-label="main navigation">
+		  <div class="navbar-brand">
+		    <a class="navbar-item" href="https://bulma.io">
+		      <img src="/img/assets/skeleton/dp-logo.png" style="max-height: 2.2rem;">
+		    </a>
+		  </div>
+		</nav>
+        <a class="navbar-item" href="#">
+			<img src="/img/assets/skeleton/d4f7ed6133d151c34f3c2025d118c2ec.gif" alt="DATAPROTECT SecView" style="max-height: 100%;">
+		</a>
+		<p>
+			<span class="title has-text-white has-text-weight-semibold">Chargement en cours</span>
+		</p>
+</div>
 
 </section>
 

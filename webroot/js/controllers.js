@@ -6,18 +6,12 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 		  var self = this;
 		  // radar
 		  $scope.labels =["Condition 1", "Condition 2", "Condition 3", "Condition 4", "Condition 5", "Condition 6", "Condition 7", "Condition 8", "Condition 9", "Condition 10", "Condition 11", "Condition 12"];
-		  self.mock="me";
-
-		  let hovering = false;
-		  tooltip = document.getElementById("tooltip");
-		  tooltips = ["such tooltip", "blah blah"];
-
-		  $scope.colors_dashboard=["#d61a27","#97bbcd","#dcdcdc","#98f2f2","#46bfbd","#fdb45c"];
+		  $scope.colors_dashboard=["#46bfbd","#fdb45c","#949fb1","#4d5360","#97bbcd","#dcdcdc","#98f2f2"];
 		  $scope.options = {
 		  		title:{
 		  			display:true,
 		  			text:"Niveau de conformité au Standard PCIDSS v3.2.1",
-		  			fontSize:25
+		  			fontSize:20
 		  		},
 			    scale: {
 			        // Hides the scale
@@ -25,54 +19,40 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			    },
 			    legend:{
 			    	display:true,
-			    	position:'left',
-					onHover: function(event, legendItem) {
-					          // if (hovering) {
-					          //   return;
-					          // }
-					          // hovering = true;
-					          // tooltip.innerHTML = tooltips[legendItem.datasetIndex];
-					          // tooltip.style.left = event.x + "px";
-					          // tooltip.style.top = event.y + "px";
-					        },
-			        onLeave: function() {
-			        	// alert("yes");
-			          // hovering = false;
-			          // tooltip.innerHTML = "";
-			        }
+			    	position:'left'
 			    }
 		  };
-		  $scope.overrides_radar=[{
-		  	label:"BGFI BANK"
-		  },
-		  {
-		  	label:"ATTIJARIWAFA BANK"
-		  },
-		  {
-		  	label:"NSIA BANQUE"
-		  },
-		  {
-		  	label:"BANGE"
-		  },
-		  {
-		  	label:"BPM"
-		  },
-		  ]
-		  $scope.data = [
-		    [28, 59, 44, 81, 56, 22, 40,23,45,20,76,43],
-		    [65, 59, 90, 81, 56, 55, 40,43,75,60,16,73],
-		    [40,43,75,60,16,73, 65, 59, 90, 81, 56, 55],
-		    [40,23,45,20,76,43, 28, 59, 44, 81, 56,],
-		    [22, 59, 67, 81, 56, 88, 40,43,75,19,78,100]
-		  ];
+
+		$scope.data_audit_labels =["Condition 1", "Condition 2", "Condition 3", "Condition 4", "Condition 5", "Condition 6", "Condition 7", "Condition 8", "Condition 9", "Condition 10", "Condition 11", "Condition 12"];
+		$scope.options_audit_radar = {
+		  		title:{
+		  			display:true,
+		  			text:"Niveau de conformité au Standard PCIDSS v3.2.1",
+		  			fontSize:18
+		  		}
+		  };
+		  $scope.data_audit_radar = [[0,0,0,0,0,0,0,0,0,0,0,0]];
+          $scope.audit_radar_colors =["#d61a27","#97bbcd"];
+
+		  // Manage quickview audit-box
+		  $scope.initial_audit_report_quick_view_trigger = '';
+		  $scope.initial_audit_report_quick_view_condition_id = 0;
+		  $scope.show_initial_audit_report_quick_view = function(condition_id){
+		   $scope.initial_audit_report_quick_view_trigger = 'is-active';
+		   $scope.initial_audit_report_quick_view_condition_id = condition_id;
+		  };
+		  $scope.close_initial_audit_report_quick_view = function(condition_id){
+		   $scope.initial_audit_report_quick_view_trigger = '';
+		  };
+
 
 		  $scope.profile = profile.data.profile;
 		  $scope.global_kpis = {};
 		  $scope.filter_keys = '';
-		  $scope.is_loading = false;
+		  $scope.is_loading = "";
 		  $scope.load_kpis = function(interval_object){
-		  $scope.is_loading = true;
-			  KpiService.global(interval_object).then(response=>{
+		  $scope.is_loading = "is-active";
+			KpiService.global(interval_object).then(response=>{
 			  	 $scope.global_kpis = response.data.whole_stats;
 						 $scope.global_kpis.projects.forEach(function(element){
 							element.project_meta = JSON.parse(element.project_meta);
@@ -112,27 +92,117 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			  }, error=>{
 			  	 toastr.error('Une erreur est survenue, veuillez réessayer');
 			  }).finally(function(){
-		  			$scope.is_loading = false;
+		  			$scope.is_loading = "";
 			  });
 		  };
 
 		  $scope.modelize_charts = function(){
-			  // Section 1 followed projects
-			  $scope.pie_followed_chart_options = {
-						title:{ 
-							display:true,
-							text:'Résumé',
-							fontSize:16,
-						},
-						tooltips:{
-							intersect:false
-						},
-						legend:{
-							display:true,
-							position:'left'
-						}
-			   };
+				  // Section 1 followed projects
+				  $scope.pie_followed_chart_options = {
+							title:{ 
+								display:true,
+								text:'Résumé',
+								fontSize:16,
+							},
+							tooltips:{
+								intersect:false
+							},
+							legend:{
+								display:true,
+								position:'left'
+							}
+				   };
+
+				   // generate main radar
+				   $scope.stats_report_audit_context = {
+								conformity:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+								in_place:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+								not_in_place:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+								not_applicable:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+								total:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+								global_conformity:0,
+								global_in_place:0,
+								global_not_inplace:0,
+								global_not_applicable:0,
+								global_total:0
+				   };
+
+				   $scope.init_single_radar_datas = function(){
+							$scope.stats_report_audit_single = {
+								conformity:0,
+								in_place:0,
+								total:0
+						   };						  
+				   };
+
+				   $scope.overrides_radar = [];
+				   $scope.radar_datas = [];
+				   $scope.customers = [];
+
+				   $scope.global_kpis.projects.forEach(function(element, index){
+				   	    let radar_label = {
+				   	    	label:element.project_meta.project_customer.name+"-"+element.project_meta.project_customer.country
+				   	    };
+				   	    $scope.customers.push(element.project_meta.project_customer);
+				   	    $scope.overrides_radar.push(radar_label);
+				   		if(element.project_meta.hasOwnProperty("pcidssv321")){
+				   		  var parent_condition = 1;
+				   		  let stats_report_audit_single_array = [];
+				   		  $scope.init_single_radar_datas();
+				   		  let full_length_object = (element.project_meta.pcidssv321.length-1);
+				   		  element.project_meta.pcidssv321.forEach(function(elm, ind){
+				   		  	    // console.log(parent_condition);
+				   		  	    // console.log(elm.parent_condition_id);
+							  	if(elm.parent_condition_id != parent_condition){
+									$scope.stats_report_audit_single.conformity = (Math.round(($scope.stats_report_audit_single.in_place/$scope.stats_report_audit_single.total)*100)).toFixed(2);
+							  		stats_report_audit_single_array.push($scope.stats_report_audit_single.conformity);
+							  		parent_condition = elm.parent_condition_id;
+				   		  			$scope.init_single_radar_datas();
+							  	}
+						  		if(elm.procedure_verdict != "N/T"){
+							  		$scope.stats_report_audit_context.total[parent_condition-1].ex++;
+							  		$scope.stats_report_audit_single.total++;
+						  		}
+							  	if(elm.procedure_verdict == "N/A"){
+							  		$scope.stats_report_audit_context.not_applicable[parent_condition-1].ex++;
+							  	}
+							  	if(elm.procedure_verdict == "Oui"){
+							  		$scope.stats_report_audit_context.in_place[parent_condition-1].ex++;
+							  		$scope.stats_report_audit_single.in_place++;
+							  	}
+							  	if(elm.procedure_verdict == "Non"){
+							  		$scope.stats_report_audit_context.not_in_place[parent_condition-1].ex++;
+							  	}
+							  	if(full_length_object == ind){
+									$scope.stats_report_audit_single.conformity = (Math.round(($scope.stats_report_audit_single.in_place/$scope.stats_report_audit_single.total)*100)).toFixed(2);
+							  		stats_report_audit_single_array.push($scope.stats_report_audit_single.conformity);
+							  	}
+				   		   });
+				   		  $scope.radar_datas.push(stats_report_audit_single_array);
+				   }else{
+				   		  let mock = [0,0,0,0,0,0,0,0,0,0,0,0];
+				   		  $scope.radar_datas.push(mock);
+				   }
+			   });
 			   
+			   for(i=0;i<12;i++){
+		   					$scope.stats_report_audit_context.conformity[i].ex = (Math.round(($scope.stats_report_audit_context.in_place[i].ex/$scope.stats_report_audit_context.total[i].ex)*100)).toFixed(2);
+				}
+
+			  var global_conformity = 0,global_in_place=0,global_not_inplace=0,global_not_applicable=0,global_total = 0;
+			  for(i=0;i<12;i++){
+			  	global_conformity +=  parseFloat($scope.stats_report_audit_context.conformity[i].ex);
+			  	global_in_place += $scope.stats_report_audit_context.in_place[i].ex;
+			  	global_not_inplace += $scope.stats_report_audit_context.not_in_place[i].ex;
+			  	global_not_applicable += $scope.stats_report_audit_context.not_applicable[i].ex;
+			  	global_total += $scope.stats_report_audit_context.total[i].ex;
+			  }
+			  $scope.stats_report_audit_context.global_conformity = (Math.round(global_conformity/12)).toFixed(2);
+			  $scope.stats_report_audit_context.global_in_place = global_in_place;
+			  $scope.stats_report_audit_context.global_not_inplace = global_not_inplace;
+			  $scope.stats_report_audit_context.global_not_applicable = global_not_applicable;
+			  $scope.stats_report_audit_context.global_total = global_total;
+
 			   $scope.detail_followed_project_labels=["Etude","Execution","Production","Tests","Fin des tests","Non démarré","Suspendu","Annulé","Clotûré"];
 			   $scope.detail_followed_projects=[];
 			   for(var key in $scope.global_kpis.project_status){
@@ -140,12 +210,42 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			   }
 			   $scope.detail_followed_project_colors = ["#97bbcd","#dcdcdc","#98f2f2","#46bfbd","#fdb45c","#949fb1","#4d5360","#f7464a","#1bd100"];
 			   // section 2 followed project spoc secbydesign
-
+			   console.log($scope.customers);
 			   // radar section 2 spoc occupation
-			   $scope.spoc_followed_simple_data = [];
-			   $scope.spoc_followed_simple_labels = [];
+			   $scope.spocs = [{
+			   		auditor:"Boris NCHO",
+			   		project_followed:20
+			   },
+			   {
+			   		auditor:"Emmanuel RIEHL",
+			   		project_followed:15
+			   },{
+			   		auditor:"Hafsa ZGUIOUI",
+			   		project_followed:26
+			   }];
 
-			   $scope.labels_radar  = $scope.global_kpis.project_carriers;
+			   // Risk EVOLUTIONS
+				  $scope.labels_risk_evolved = ["Trimestre 1", "Trimestre 2", "Trimestre 3", "Trimestre 4"];
+				  $scope.series_list_evolved = ['NSIA Banque','BPM','BPEC','TOGO'];
+				  $scope.data_risk_evoled = [
+				    [65, 59, 80, 81],
+				    [28, 48, 40, 19],
+				    [86, 27, 90, 28],
+				    [76, 10, 30, 55]
+				  ];
+
+			  $scope.data_bar_risk_evolved_labels = ['2015', '2016', '2017', '2018', '2019'];
+			  $scope.data_bar_risk_evolved_series = ['Risque Avant', 'Risque Après'];
+
+			  $scope.data_bar_risk_evolved_labels_datas = [
+			    [65, 59, 80, 81, 56],
+			    [28, 48, 40, 19, 86]
+			  ];
+
+			   $scope.spoc_followed_simple_data = [20,15,26];
+			   $scope.spoc_followed_simple_labels = ["Boris NCHO","Emmanuel RIEHL","Hafsa ZGUIOUI"];
+
+			   $scope.labels_radar  = ["PCIDSS"];
 			   $scope.data_radar = [];
 			   $scope.data_series_radar = [];
 			   $scope.radar_spoc_chart_options = {
@@ -162,32 +262,57 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 							position:'left'
 						}
 			   };
-			   
-			   $scope.global_kpis.spocs.forEach(function(element,index){
-			   		$scope.spoc_followed_simple_data.push(element.project_followed);
-			   		$scope.spoc_followed_simple_labels.push(element.auditor);
-			   		$scope.data_series_radar.push(element.auditor);
-			   		var data_radars = [];
-			   		for(var carrier in element.project_carriers){
-			   			data_radars.push(element.project_carriers[carrier]);
-			   		}
-			   		$scope.data_radar.push(data_radars);
-			   });
+
+			   // $scope.data_series_radar
+			   // data_radar
+			   // labels_radar
+
+			   $scope.radar_spoc_chart_options_charge = {
+						title:{ 
+							display:true,
+							text:'Charge de Travail SMP',
+							fontSize:16,
+						},
+						tooltips:{
+							intersect:false
+						},
+						legend:{
+							display:true,
+							position:'left'
+						}
+			   };
+
+
+			   $scope.labels_radar_charge =["PCIDSS", "PADSS", "PIN SECURITY", "3DS", "CARD PRODUCTION"];
+
+			   $scope.data_radar_charge = [
+			    [65, 59, 90, 81, 56, 55, 40],
+			    [28, 48, 40, 19, 96, 27, 100],
+			    [41, 39, 11, 20, 31, 52, 67]
+			  ];
+
+			  $scope.overrides_radar_charge=[
+			  	{label:"Boris NCHO"},{label:"Hafsa ZGUIOUI"},{label:"Emmanuel RIEHL"}
+			  ];
+
+
+			   // Contextual radars
+			   // Spocs missions
 
 			   // repartition du risque
-			   $scope.risk_repartition_data = [0,$scope.global_kpis.project_carriers_stats_total.total_risk_before,$scope.global_kpis.project_carriers_stats_total.total_risk_actual];
-			   $scope.risk_repartition_labels = ["Référence","Risque Avant","Risque Actuel"];
-			   $scope.risk_repartition_colors = ["#dcdcdc","#f7464a","#1bd100"];
-			   $scope.risk_repartition_chart_options = {
-					title:{
-						display:true,
-						text:'Evolution du risque global',
-						fontSize:16,
-					},
-					tooltips:{
-						intersect:false
-					}
-				 };
+			   // $scope.risk_repartition_data = [0,$scope.global_kpis.project_carriers_stats_total.total_risk_before,$scope.global_kpis.project_carriers_stats_total.total_risk_actual];
+			  //  $scope.risk_repartition_labels = ["Référence","Risque Avant","Risque Actuel"];
+			  //  $scope.risk_repartition_colors = ["#dcdcdc","#f7464a","#1bd100"];
+			  //  $scope.risk_repartition_chart_options = {
+					// title:{
+					// 	display:true,
+					// 	text:'Evolution du risque global',
+					// 	fontSize:16,
+					// },
+					// tooltips:{
+					// 	intersect:false
+					// }
+				 // };
 
 				  $scope.lines_risk_repartition_labels = $scope.labels_radar;
 				  $scope.lines_risk_repartition_series = ['Avant', 'Actuel'];
@@ -240,6 +365,16 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 		$scope.current_selected_project_index = '';
 		$scope.refresh_current_selected = false;
 
+		$scope.initial_audit_report_modal = '';
+		$scope.initial_audit_report_modal_close = function(){
+			$scope.determine_whole_audit_stats();
+			$scope.initial_audit_report_modal = '';
+		};
+		$scope.initial_audit_report_modal_popup = function(){
+			$scope.initial_audit_report_modal = 'is-active';
+			console.log($scope.current_selected_project);
+		};
+
 		$scope.openViewModal = function(project,index){
 			$scope.current_selected_project = project;
 			$scope.current_selected_project_index = index;
@@ -248,8 +383,100 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			$scope.current_index_chart = 0;
 		    $scope.alt_vuln = {};
 		    $scope.init_dash_charts();
+		    $scope.determine_whole_audit_stats();
 		};
 
+
+		//begin manage contextual stats
+		$scope.refresh_stats_report_audit = function(){
+			$scope.stats_report_audit = {
+				conformity:0,
+				in_place:0,
+				not_in_place:0,
+				not_applicable:0,
+				total:0
+			};
+			$scope.whole_stats_report_audit = {
+				conformity:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+				in_place:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+				not_in_place:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+				not_applicable:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+				total:[{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0},{ex:0}],
+				global_conformity:0,
+				global_in_place:0,
+				global_not_inplace:0,
+				global_not_applicable:0,
+				global_total:0
+			};
+		};
+
+		$scope.workflow_tab_initial_audit_report = 'cond1';
+
+		$scope.workflow_tab_initial_audit_report_eval = function(condition,condition_id){
+		  $scope.workflow_tab_initial_audit_report = condition;
+		  if(condition != 'info')
+		  	$scope.determine_audit_stats(condition_id);
+		};
+
+		$scope.determine_audit_stats = function(condition_id){
+			$scope.stats_report_audit = {
+				conformity:0,
+				in_place:0,
+				not_in_place:0,
+				not_applicable:0,
+				total:0
+			};
+		  $scope.current_selected_project.forEach(function(element){
+		  	if(element.parent_condition_id == condition_id){
+		  		if(element.procedure_verdict != "N/T")
+			  		$scope.stats_report_audit.total++;
+			  	if(element.procedure_verdict == "N/A")
+			  		$scope.stats_report_audit.not_applicable++;
+			  	if(element.procedure_verdict == "Oui")
+			  		$scope.stats_report_audit.in_place++;
+			  	if(element.procedure_verdict == "Non")
+			  		$scope.stats_report_audit.not_in_place++;
+		  	}
+		  });
+		    $scope.stats_report_audit.conformity = (Math.round(($scope.stats_report_audit.in_place/$scope.stats_report_audit.total)*100)).toFixed(2);
+		};
+
+		$scope.determine_whole_audit_stats = function(){
+		  let parent_condition = 1; 
+		  $scope.refresh_stats_report_audit();
+		  $scope.current_selected_project.project_meta.pcidssv321.forEach(function(element){
+		  	if(element.parent_condition_id != parent_condition){
+		  		parent_condition = element.parent_condition_id;
+		  	}
+		  		if(element.procedure_verdict != "N/T")
+			  		$scope.whole_stats_report_audit.total[parent_condition-1].ex++;
+			  	if(element.procedure_verdict == "N/A")
+			  		$scope.whole_stats_report_audit.not_applicable[parent_condition-1].ex++;
+			  	if(element.procedure_verdict == "Oui")
+			  		$scope.whole_stats_report_audit.in_place[parent_condition-1].ex++;
+			  	if(element.procedure_verdict == "Non")
+			  		$scope.whole_stats_report_audit.not_in_place[parent_condition-1].ex++;
+		  });
+		  var global_conformity = 0,global_in_place=0,global_not_inplace=0,global_not_applicable=0,global_total = 0;
+		  for(i=0;i<12;i++){
+		  	let conformity = (Math.round(($scope.whole_stats_report_audit.in_place[i].ex/$scope.whole_stats_report_audit.total[i].ex)*100)).toFixed(2);
+		  	$scope.whole_stats_report_audit.conformity[i].ex = conformity;
+		  	global_conformity += parseFloat($scope.whole_stats_report_audit.conformity[i].ex);
+		  	global_in_place += $scope.whole_stats_report_audit.in_place[i].ex;
+		  	global_not_inplace += $scope.whole_stats_report_audit.not_in_place[i].ex;
+		  	global_not_applicable += $scope.whole_stats_report_audit.not_applicable[i].ex;
+		  	global_total += $scope.whole_stats_report_audit.total[i].ex;
+		  }
+		  $scope.whole_stats_report_audit.global_conformity = (Math.round(global_conformity/12)).toFixed(2);
+		  $scope.whole_stats_report_audit.global_in_place = global_in_place;
+		  $scope.whole_stats_report_audit.global_not_inplace = global_not_inplace;
+		  $scope.whole_stats_report_audit.global_not_applicable = global_not_applicable;
+		  $scope.whole_stats_report_audit.global_total = global_total;
+		  $scope.data_audit_radar = [[$scope.whole_stats_report_audit.conformity[0].ex, $scope.whole_stats_report_audit.conformity[1].ex,$scope.whole_stats_report_audit.conformity[2].ex,$scope.whole_stats_report_audit.conformity[3].ex,$scope.whole_stats_report_audit.conformity[4].ex,$scope.whole_stats_report_audit.conformity[5].ex,$scope.whole_stats_report_audit.conformity[6].ex,$scope.whole_stats_report_audit.conformity[7].ex,$scope.whole_stats_report_audit.conformity[8].ex,$scope.whole_stats_report_audit.conformity[9].ex,$scope.whole_stats_report_audit.conformity[10].ex,$scope.whole_stats_report_audit.conformity[11].ex]];
+		};
+
+
+		// end manage contextual dialog box
 		$scope.closeInfoModal = function(){
 			$scope.current_selected_project = '';
 		    $scope.showInfoProjectModal = '';
@@ -381,6 +608,10 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			$scope.dashboard_types = $scope.register.projects.dept_short;
 		});
 
+		Registers.resource("solutions_pcidss321").then(response=>{
+				$scope.solutions_pcidss321=response.data.content;
+			});
+
 		$scope.update_current_selected_vuln_report = function(id_report){
 			$scope.current_selected_project.project_vulnerabilities.forEach(function(element,index){
 				if(element.id === id_report){
@@ -389,8 +620,6 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 				}
 			});
 		};
-
-
 
 
 	}]).controller('ProjectsController',['$scope','Projects','Upload','Registers','ProjectAccompaniments','ProjectPlannings','$filter','ProjectVulnerabilities', function($scope,Projects,Upload,Registers,ProjectAccompaniments,ProjectPlannings,$filter,ProjectVulnerabilities){
@@ -467,6 +696,10 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 
 		$scope.openViewModal = function(project,index){
 			$scope.current_selected_project = project;
+			if($scope.current_selected_project.project_meta.hasOwnProperty('pcidssv321')){
+				$scope.pcidssv321 = $scope.current_selected_project.project_meta.pcidssv321;
+			}else
+			   $scope.pcidssv321=$scope.pcidssv321_backup;
 			$scope.current_selected_project_index = index;
 		    $scope.showInfoProjectModal = 'is-active';
 		    // initialize charts
@@ -477,7 +710,6 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 		};
 		$scope.closeInfoModal = function(){
 			$scope.current_selected_project = '';
-
 		    $scope.showInfoProjectModal = '';
 		};
 
@@ -535,8 +767,12 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 
 		$scope.remove_asset = function(asset, index){
 				$scope.upload_asset_project.assets.splice(index,1);
-
 				delete $scope.upload_asset_project.assets[index];
+		};
+
+		$scope.remove_asset_audit_box = function(asset, index){
+				$scope.selected_requirement.assets.splice(index,1);
+				delete $scope.selected_requirement.assets[index];
 		};
 
 		// manage accompaniments
@@ -1096,12 +1332,29 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 			console.log($scope.pcidssv321);
 		};
 		// directive trigger
-		$scope.triggerSubmitReport = function(){
-			$scope.$broadcast("triggerEvent");
+		$scope.triggerSubmit = function(){
+				var r = confirm('Etes-vous sûre de vouloir réaliser cette action?');
+				if(r == true)
+				{
+					if(!$scope.current_selected_project.project_meta.hasOwnProperty("pcidssv321"))
+					   $scope.current_selected_project.project_meta.pcidssv321 = $scope.pcidssv321;
+					// $scope.is_loading = "";
+					Upload.upload({
+						url:'/projects/refresh',
+						data:{project:$scope.current_selected_project}
+					}).then(function(resp){
+						toastr.success('Informations enregistrées avec succès');
+					}, function(err){
+						toastr.error('Une erreur est survenue, veuillez réessayer');
+					}, function(evt){
+					}).finally(function(){
+						$scope.is_loading = '';
+					});
+				}
 		};
 		// clean report function
 		$scope.cleanReport= function(){
-			$scope.pcidssv321=$scope.pcidssv321_backup;
+			// $scope.pcidssv321=$scope.pcidssv321_backup;
 		};
 		$scope.data_audit_labels =["Condition 1", "Condition 2", "Condition 3", "Condition 4", "Condition 5", "Condition 6", "Condition 7", "Condition 8", "Condition 9", "Condition 10", "Condition 11", "Condition 12"];
 		$scope.options_audit_radar = {
@@ -1123,6 +1376,23 @@ angular.module('eben.controllers',['ui.tinymce','ngFileUpload','chart.js'])
 		  $scope.close_initial_audit_report_quick_view = function(condition_id){
 		   $scope.initial_audit_report_quick_view_trigger = '';
 		  };
+
+		  $scope.selected_requirement = {};
+		  $scope.selected_requirement_index = '';
+
+		  $scope.add_proof_modal_trigger = '';
+		  $scope.open_add_proof_modal_trigger = function(requirement,index){
+		    $scope.selected_requirement = requirement;
+		    $scope.selected_requirement_index = index;
+		    $scope.add_proof_modal_trigger = 'is-active';
+		    console.log(requirement);
+		  };
+		  $scope.close_add_proof_modal_trigger = function(){
+		    $scope.pcidssv321[$scope.selected_requirement_index] = $scope.selected_requirement;
+		    $scope.selected_requirement = {};
+		    $scope.add_proof_modal_trigger = '';
+		  };
+
 	}]).controller('ProjectsAddController',['$scope','Registers','Projects','$state', function($scope,Registers,Projects,$state){
 		var self = this;
 		$scope.search_actors = '';

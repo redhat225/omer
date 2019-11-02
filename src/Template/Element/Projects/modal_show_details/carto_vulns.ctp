@@ -36,7 +36,14 @@
 		  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
 		    <div class="dropdown-content">
 		      <div class="dropdown-item">
-		      	  <a href="/sheet/corrections/{{current_selected_project.tmp_vulnerabilities_id}}.pdf" target="_blank">Exportation PDF</a>
+		      	  <a href="/zine/read" target="_blank">Exportation Rapport Audit PDF</a>
+			      <span class="icon is-small">
+			        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+			      </span>
+		      </div>
+
+		      <div class="dropdown-item">
+		      	  <a href="/sheet/corrections/{{current_selected_project.tmp_vulnerabilities_id}}.pdf" target="_blank">Exportation Fiche Suivi Correction PDF</a>
 			      <span class="icon is-small">
 			        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
 			      </span>
